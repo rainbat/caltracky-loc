@@ -11,19 +11,23 @@ function log( str ){
 function updateStatus( id, title, className){
 
   if( className.indexOf("fa-car") >= 0 ){
+  
       $("#" + id + " > div > div > button[id=wt-work]").prop("disabled", true);
       
       $("#" + id + " > div > div > button[id=wt-drive]").prop("disabled", true);
       $("#" + id + " > div > div > button[id=wt-drive] > i").removeClass();
       $("#" + id + " > div > div > button[id=wt-drive] > i").addClass("fa fa-3x fa-refresh fa-spin");
+  
   }
 
   if( className.indexOf("fa-user-md") >= 0 ){
+  
       $("#" + id + " > div > div > button[id=wt-drive]").prop("disabled", true);
       
       $("#" + id + " > div > div > button[id=wt-work]").prop("disabled", true);
       $("#" + id + " > div > div > button[id=wt-work] > i").removeClass();
       $("#" + id + " > div > div > button[id=wt-work] > i").addClass("fa fa-3x fa-refresh fa-spin");
+  
   }
 
    if( className.indexOf("fa-pause") >= 0 ){
@@ -59,7 +63,7 @@ function addCard(id,title,startDate,endDate){
               <button id="wt-drive"                         type="button" class="btn btn-raised btn-worktime wt-button"><i class="fa fa-car fa-3x"></i></button>
               <button id="wt-work"                          type="button" class="btn btn-raised btn-worktime wt-button"><i class="fa fa-user-md fa-3x"></i></button>
               <button id="wt-break"                         type="button" class="btn btn-raised btn-worktime wt-button"><i class="fa fa-pause fa-2x"></i></button>
-              <button id="wt-note"     data-type="textarea" type="button" class="btn btn-raised btn-worktime wt-button"><i class="fa fa-file-text-o fa-3x"></i></button>
+              <button id="wt-note"     data-type="textarea" type="button" class="btn btn-raised btn-worktime wt-button"><a href="#details"><i class="fa fa-file-text-o fa-3x"></i></a></button>
               <br/><br/>
               <button id="wt-flatrate" data-type="textarea" type="button" class="btn btn-raised btn-worktime wt-button"><i class="icon-ecg fa-3x"></i></button>
               <button id="wt-flatrate" data-type="textarea" type="button" class="btn btn-raised btn-worktime wt-button"><i class="icon-hot fa-3x"></i></button>
