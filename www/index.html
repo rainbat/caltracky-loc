@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+
+<link rel="stylesheet" href="css/careicons.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome/css/font-awesome-admin.min.css">
+<!--link rel="stylesheet" href="css/the-theme-base.min.css"-->
+<!--link rel="stylesheet" href="css/bootstrap-material-design-0.3.0/css/material.min.css"-->
+
+<script src="cordova.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/app.js"></script>
+<script src="js/date.js"></script>
+<script src="js/moment.js"></script>
+
+
+<script type="text/javascript">
+	$(document).on('mobileinit', function(){
+		log("pageinit");
+		$.mobile.defaultPageTransition = 'slide';
+	});
+</script>
+
+<script src="js/jquery.mobile-1.4.5.js"></script>
+
+</head>
+<<body>
+
+<!-- Start of first page -->
+<div data-role="page" id="menu">
+
+	<div data-role="header">
+		<h1>Teaching Tech Test App</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<a class="ui-btn" id="cal2">Sync Today</a>
+		<a href="#settings" class="ui-btn">Settings</a>
+		<center><div id="cards"></div></center>
+		<script>
+			$('#cal2').on('click', function () {
+         	
+				var calOptions = window.plugins.calendar.getCalendarOptions();
+	  			calOptions.calendarName = "Work";
+	  			//calOptions.calendarId = 1;
+			     
+			     window.plugins.calendar.findEventWithOptions(
+			     	
+			     	null, 
+			     	null, 
+			     	null, 
+			     	
+					new Date.today(),
+					new Date.today().addDays(1) , 
+			     	
+			     	calOptions,
+
+			     	function (msg) {
+
+					    log('Calendar success: ' );
+						
+						$("#cards").empty();
+
+					    msg.forEach(function(entry) {
+					   
+					      var spart = entry.startDate.split(' ');
+					      var epart =  entry.endDate.split(' ');
+					   
+					      tmp_card = addCard(entry.id, entry.title, spart[1], epart[1] );
+					   
+					      $("#cards").append(tmp_card);
+					   
+					    });
+
+					}, 
+			     	function(msg) { log("Error findEventWithOptions: " + msg); }
+			     );
+
+			});
+		</script>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+<!-- Start of fifth page -->
+<div data-role="page" id="settings">
+
+	<div data-role="header">
+	<a href="#menu" data-direction="reverse" class="ui-btn"><</a>
+		<h1>Settings</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+		<a class="ui-btn" id="create">createEventNowStart</a>
+		<a class="ui-btn" id="update">updateEventNowToEnd</a>
+		<a class="ui-btn" id="location">getLocation</a>
+		<a class="ui-btn" id="watchPosition">watchPosition</a>
+		<a class="ui-btn" id="clearWatchPosition">clearWatchPosition</a>
+		<a class="ui-btn" id="syncTrackStatus">syncTrackStatus</a>
+		<a class="ui-btn" id="updateLog">updateLog</a>
+
+		<br/>
+
+		<div id="track" class="ui-shadow ui-listview-inset"></div>
+		
+		<br/>
+
+		<div id="log" class="ui-shadow ui-listview-inset"></div>
+		
+	</div><!-- /content -->
+
+	<script>
+
+		$('#syncTrackStatus').on('click', function () {
+		
+			var calOptions = window.plugins.calendar.getCalendarOptions();
+  			calOptions.calendarName = "Track";
+  			//calOptions.calendarId = 1;
+		     
+		     window.plugins.calendar.findEventWithOptions(
+		     	
+		     	null, 
+		     	null, 
+		     	null, 
+		     	
+				new Date.today(),
+				new Date.today().addDays(1) , 
+		     	
+		     	calOptions,
+
+		     	function (msg) {
+
+				    log('Calendar success: ' );
+					
+					$("#track").empty();
+				    $("#track").append("<table border=1>");
+				    msg.forEach(function(entry) {
+				    	
+				    	var spart = entry.startDate.split(' ');
+					    var epart = entry.endDate.split(' ');
+
+				     	$("#track").append( "<tr><td>" + spart[1] + " " + epart[1] + " " + entry.title + "</td></tr>" );
+					});
+				   
+				   $("#track").append("</table>");
+				   
+
+				}, 
+		     	function(msg) { log("Error syncTrackStatus: " + msg); }
+		     );
+
+		});
+
+		$('#updateLog').on('click', function () {
+
+			$("#log").empty();    
+
+			$("#log").append("<table border=1>");
+
+			var out = tmp.reverse();
+
+			for( var i=0; i< out.length; i++){		
+				$("#log").append( "<tr><td>" + out[i] + "</td></tr>" );
+			}
+
+			$("#log").append("</table>");
+
+
+		});
+
+		$('#create').on('click', function () {
+
+			var calOptions = window.plugins.calendar.getCalendarOptions();
+  			calOptions.calendarName = "Track";
+  			//calOptions.calendarId = 1;
+
+  			window.plugins.calendar.createEventWithOptions(
+				
+				"My nice event (Start)",
+				 "Home",
+				"Some notes about this event.",
+				
+				new Date(),
+				new Date( moment().add(1, 'hours') ),
+				
+				calOptions,
+				
+				function(msg) { log("Success createEventWithOptions: " + JSON.stringify(msg)); },
+				function(msg) { log("Error createEventWithOptions: " + msg); }
+			);
+
+		});
+
+		$('#update').on('click', function () {
+		
+			var calOptions = window.plugins.calendar.getCalendarOptions();
+  			calOptions.calendarName = "Track";
+  			//calOptions.calendarId = 1;
+
+			window.plugins.calendar.findEventWithOptions(
+				
+				"My nice event (Start)",
+				"Home",
+				"Some notes about this event.",
+				
+				new Date.today(),
+				new Date.today().addDays(1) ,
+				
+				calOptions,
+
+				function( msg ){
+
+					var filterOptions = window.plugins.calendar.getCalendarOptions(); 
+  					filterOptions.calendarName = "Track";
+  					//filterOptions.calendarId = 1;
+  					var newOptions = window.plugins.calendar.getCalendarOptions(); 
+  					newOptions.calendarName = "Track";
+  					//newOptions.calendarId = 1; 
+  					
+  					window.plugins.calendar.modifyEventWithOptions(
+
+  						"My nice event (Start)",
+						"Home",
+						"Some notes about this event.",
+
+  						Date.parse( msg[0].startDate ),
+  						Date.parse( msg[0].endDate ),
+
+  						"My nice event (End)",
+						"Home",
+						"Some notes about this event.",
+
+  						Date.parse( msg[0].startDate ),
+  						new Date(),
+
+  						filterOptions,
+  						newOptions,
+
+						function(msg) { log("Success modifyEventWithOptions: " + JSON.stringify(msg)); },
+						function(msg) { log("Error modifyEventWithOptions: " + msg); }
+
+  					);
+
+				},
+
+				function(msg) { alert("Error modifyEventWithOptions: " + msg); }
+			);
+			
+			
+
+		});
+
+		$('#location').on('click', function () {
+
+			var onSuccess = function(position) {
+				  log('Latitude: '          + position.coords.latitude          + '\n' +
+				      'Longitude: '         + position.coords.longitude         + '\n' +
+				      'Altitude: '          + position.coords.altitude          + '\n' +
+				      'Accuracy: '          + position.coords.accuracy          + '\n' +
+				      'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+				      'Heading: '           + position.coords.heading           + '\n' +
+				      'Speed: '             + position.coords.speed             + '\n' +
+				      'Timestamp: '         + position.timestamp                + '\n');
+				};
+
+			// onError Callback receives a PositionError object
+			//
+			function onError(error) {
+			    log('code: '    + error.code    + '\n' +
+			          'message: ' + error.message + '\n');
+			}
+
+			window.navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+		});
+
+		var watchID = "";
+
+		$('#watchPosition').on('click', function () {
+
+			// onSuccess Callback
+			//   This method accepts a `Position` object, which contains
+			//   the current GPS coordinates
+			//
+			function onSuccess(position) {
+			    /*alert('Latitude: '          + position.coords.latitude          + '\n' +
+				      'Longitude: '         + position.coords.longitude         + '\n' +
+				      'Altitude: '          + position.coords.altitude          + '\n' +
+				      'Accuracy: '          + position.coords.accuracy          + '\n' +
+				      'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+				      'Heading: '           + position.coords.heading           + '\n' +
+				      'Speed: '             + position.coords.speed             + '\n' +
+				      'Timestamp: '         + position.timestamp                + '\n');*/
+				log( "moving with :" + position.coords.speed );
+			}
+
+			// onError Callback receives a PositionError object
+			//
+			function onError(error) {
+			    log('code: '    + error.code    + '\n' +
+			          'message: ' + error.message + '\n');
+			}
+
+			// Options: throw an error if no update is received every 30 seconds.
+			//
+			var watchID = window.navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });
+			var watchID = window.navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });
+		
+		});
+
+		$('#clearWatchPosition').on('click', function () {
+			window.navigator.geolocation.clearWatch(watchID);
+		});
+
+	</script>
+
+	<div data-role="footer" data-position="fixed">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>
