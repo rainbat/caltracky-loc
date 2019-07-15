@@ -41,10 +41,46 @@
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
+		<a class="ui-btn" id="options">Sync Options</a>
 		<a class="ui-btn" id="cal2">Sync Today</a>
 		<a href="#settings" class="ui-btn">Settings</a>
 		<center><div id="cards"></div></center>
 		<script>
+			$('#options').on('click', function () {
+         	
+				var calOptions = window.plugins.calendar.getCalendarOptions();
+	  			calOptions.calendarName = "Work";
+	  			//calOptions.calendarId = 1;
+			     
+			     window.plugins.calendar.findEventWithOptions(
+			     	
+			     	"CalTracky Options", 
+			     	null, 
+			     	null, 
+			     	
+					new Date.parse("2018-01-01"),
+					new Date.parse("2022-31-12"), 
+			     	
+			     	calOptions,
+
+			     	function (msg) {
+
+					    console.log('Calendar Found Options success: ' + msg.length);
+						
+						if( msg.length() == 0){
+
+							
+
+						}else{
+
+						}
+
+					}, 
+			     	function(msg) { log("Error findEventWithOptions: " + msg); }
+			     );
+
+			});
+
 			$('#cal2').on('click', function () {
          	
 				var calOptions = window.plugins.calendar.getCalendarOptions();
