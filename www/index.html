@@ -37,21 +37,36 @@
 <div data-role="page" id="menu">
 
 	<div data-role="header">
-		<h1>Teaching Tech Test App</h1>
+		<h1>Calendar Time Tracking</h1>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
-		<a class="ui-btn" id="options">Sync Options</a>
-		<a class="ui-btn" id="cal2">Sync Today</a>
-		<a href="#settings" class="ui-btn">Settings</a>
+		<a class="ui-btn" id="today">Sync Today</a>
 		<center><div id="cards"></div></center>
+		<a href="#settings" class="ui-btn">Settings</a>
+		<a class="ui-btn" id="options">Sync Options</a>
 		<script>
 			$('#options').on('click', function () {
          	
 				var calOptions = window.plugins.calendar.getCalendarOptions();
 	  			calOptions.calendarName = "Work";
-	  			//calOptions.calendarId = 1;
+	  			calOptions.calendarId = calOptionsIdWork;
 			     
+			     window.plugins.calendar.listCalendars(
+			     	function(msg){
+			     		msg.forEach(function(entry) {
+			     			if ( entry.name == "Work" )  calOptionsIdWork = entry.id;
+			     			if ( entry.name == "Track" ) calOptionsIdTrack = entry.id;
+			     		});
+			     		log( "calOptionsIdWork:" + calOptionsIdWork);
+			     		log( "calOptionsIdTrack:" + calOptionsIdTrack);
+			     	},
+			     	function(msg){
+			     		log("Error listCalendars");
+			     	}
+			     	);
+
+
 			     window.plugins.calendar.findEventWithOptions(
 			     	
 			     	"CalTracky Options", 
@@ -65,14 +80,29 @@
 
 			     	function (msg) {
 
-					    console.log('Calendar Found Options success: ' + msg.length);
+					    log('Calendar Found Options success: ' + msg.length);
 						
-						if( msg.length() == 0){
+						if( msg.length == 0){
 
-							
+				            window.plugins.calendar.createEventWithOptions(
+      
+			                  "CalTracky Options",
+			                  "Home",
+			                  "{ 'test' : 'test' }",
+			                  
+			                  new Date(),
+			                  new Date( moment().add(1, 'hours') ),
+			                  
+			                  calOptions,
+			                  
+			                  function(msg) { log("Success createEventWithOptions: " + JSON.stringify(msg)); },
+			                  function(msg) { log("Error createEventWithOptions: " + msg); }
+			                
+			                );
+
 
 						}else{
-
+							alert( "Found Options " + msg[0].message);
 						}
 
 					}, 
@@ -81,11 +111,11 @@
 
 			});
 
-			$('#cal2').on('click', function () {
+			$('#today').on('click', function () {
          	
 				var calOptions = window.plugins.calendar.getCalendarOptions();
 	  			calOptions.calendarName = "Work";
-	  			//calOptions.calendarId = 1;
+	  			calOptions.calendarId = calOptionsIdWork;
 			     
 			     window.plugins.calendar.findEventWithOptions(
 			     	
@@ -111,12 +141,70 @@
 					   
 					      tmp_card = addCard(entry.id, entry.title, spart[1], epart[1] );
 					   
-					      $("#cards").append(tmp_card);
+					      if( entry.title.indexOf("Options") == -1) $("#cards").append(tmp_card);
 					   
 					    });
 
 					}, 
 			     	function(msg) { log("Error findEventWithOptions: " + msg); }
+			     );
+
+			//});
+
+			//$('#syncTrackStatus').on('click', function () {
+		
+				var calOptions = window.plugins.calendar.getCalendarOptions();
+	  			calOptions.calendarName = "Track";
+	  			calOptions.calendarId = calOptionsIdTrack;
+			     
+			     window.plugins.calendar.findEventWithOptions(
+			     	
+			     	null, 
+			     	null, 
+			     	null, 
+			     	
+					new Date.today(),
+					new Date.today().addDays(1) , 
+			     	
+			     	calOptions,
+
+			     	function (msg) {
+
+					    log('Calendar success: ' );
+						
+						$("#track").empty();
+					    $("#track").append("<table border=1>");
+					    msg.forEach(function(entry) {
+					    	
+					    	var spart = entry.startDate.split(' ');
+						    var epart = entry.endDate.split(' ');
+
+					     	$("#track").append( "<tr><td>" + spart[1] + " " + epart[1] + " " + entry.title + "</td></tr>" );
+
+					     	if(entry.title.indexOf("(Start Drive)") >=0){
+					     		$("#" + entry.message + " > div > div > button[id=wt-drive]").prop("disabled", true);
+								$("#" + entry.message + " > div > div > button[id=wt-drive] > i").removeClass();
+								$("#" + entry.message + " > div > div > button[id=wt-drive] > i").addClass("fa fa-3x fa-refresh fa-spin");
+					     	}
+
+							if(entry.title.indexOf("(Start Work)") >=0){
+					     		$("#" + entry.message + " > div > div > button[id=wt-work]").prop("disabled", true);
+							    $("#" + entry.message + " > div > div > button[id=wt-work] > i").removeClass();
+							    $("#" + entry.message + " > div > div > button[id=wt-work] > i").addClass("fa fa-3x fa-refresh fa-spin");
+					     	}
+
+							if(entry.title.indexOf("(Memo)") >=0){
+							    //$("#" + entry.message + " > div > div > button[id=wt-note] > i").addClass("fa fa-3x fa-refresh fa-spin");
+					     	}
+
+
+						});
+					   
+					   $("#track").append("</table>");
+					   
+
+					}, 
+			     	function(msg) { log("Error syncTrackStatus: " + msg); }
 			     );
 
 			});
@@ -132,20 +220,61 @@
 <div data-role="page" id="details">
 
 	<div data-role="header">
-		<h1>Teaching Tech Test App</h1>
+		<a href="#menu" data-direction="reverse" class="ui-btn"><</a>
+		<h1>Calendar Time Tracking</h1>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
-		<a href="#menu" class="ui-btn">Save</a>
-		
+		<a id="saveMemo" class="ui-btn">Save</a>
+
 		<div data-role="fieldcontain">
+            <input type="text" id="title">
             <label for="textarea-3">Memo</label>
-            <textarea rows="15" name="textarea-13" id="textarea-3" class="editor" data-autogrow="false"></textarea>
+            <textarea id="memo" rows="15" name="textarea-13" id="textarea-3" class="editor" data-autogrow="false"></textarea>
         </div>
         
         <a href="#menu" class="ui-btn">Memos load</a>
 
 		<script>
+			$('#saveMemo').on('click', function () {
+	
+  				var filterOptions = window.plugins.calendar.getCalendarOptions(); 
+				filterOptions.calendarName = "Track";
+				filterOptions.calendarId = calOptionsIdTrack;
+				
+				var newOptions = window.plugins.calendar.getCalendarOptions(); 
+				newOptions.calendarName = "Track";
+				newOptions.calendarId = calOptionsIdTrack; 
+				
+				window.plugins.calendar.modifyEventWithOptions(
+
+					$("#title").val() + " (Memo)",
+					"Home",
+					null,
+
+					new Date.today(),
+					new Date.today().addDays(1) , 
+
+					$("#title").val() + " (Memo)",
+					"Home",
+					$("#memo").val(),
+
+					new Date(),
+			        new Date( moment().add(1, 'hours') ),
+
+					filterOptions,
+					newOptions,
+
+				function(msg) { 
+					log("Success modifyEventWithOptions: " + JSON.stringify(msg)); 
+					$(':mobile-pagecontainer').pagecontainer('change', '#menu');
+				},
+				function(msg) { log("Error modifyEventWithOptions: " + msg); }
+
+				);
+
+  			});
+
 
         </script>
 
@@ -167,65 +296,29 @@
 
 	<div role="main" class="ui-content">
 		
+		<!-- <a class="ui-btn" id="syncTrackStatus">syncTrackStatus</a> -->
+		
+		<br/>
+		
+		<a class="ui-btn" id="updateLog">updateLog</a>
+		<div id="log" class="ui-shadow ui-listview-inset"></div>
+
+		<br/>
+		
+		<div id="track" class="ui-shadow ui-listview-inset"></div>
+		
+		<br/>
+		
 		<a class="ui-btn" id="create">createEventNowStart</a>
 		<a class="ui-btn" id="update">updateEventNowToEnd</a>
 		<a class="ui-btn" id="location">getLocation</a>
 		<a class="ui-btn" id="watchPosition">watchPosition</a>
 		<a class="ui-btn" id="clearWatchPosition">clearWatchPosition</a>
-		<a class="ui-btn" id="syncTrackStatus">syncTrackStatus</a>
-		<a class="ui-btn" id="updateLog">updateLog</a>
-
-		<br/>
-
-		<div id="track" class="ui-shadow ui-listview-inset"></div>
 		
-		<br/>
-
-		<div id="log" class="ui-shadow ui-listview-inset"></div>
 		
 	</div><!-- /content -->
 
 	<script>
-
-		$('#syncTrackStatus').on('click', function () {
-		
-			var calOptions = window.plugins.calendar.getCalendarOptions();
-  			calOptions.calendarName = "Track";
-  			//calOptions.calendarId = 1;
-		     
-		     window.plugins.calendar.findEventWithOptions(
-		     	
-		     	null, 
-		     	null, 
-		     	null, 
-		     	
-				new Date.today(),
-				new Date.today().addDays(1) , 
-		     	
-		     	calOptions,
-
-		     	function (msg) {
-
-				    log('Calendar success: ' );
-					
-					$("#track").empty();
-				    $("#track").append("<table border=1>");
-				    msg.forEach(function(entry) {
-				    	
-				    	var spart = entry.startDate.split(' ');
-					    var epart = entry.endDate.split(' ');
-
-				     	$("#track").append( "<tr><td>" + spart[1] + " " + epart[1] + " " + entry.title + "</td></tr>" );
-					});
-				   
-				   $("#track").append("</table>");
-				   
-
-				}, 
-		     	function(msg) { log("Error syncTrackStatus: " + msg); }
-		     );
-
-		});
 
 		$('#updateLog').on('click', function () {
 
@@ -248,7 +341,7 @@
 
 			var calOptions = window.plugins.calendar.getCalendarOptions();
   			calOptions.calendarName = "Track";
-  			//calOptions.calendarId = 1;
+  			calOptions.calendarId = calOptionsIdTrack;
 
   			window.plugins.calendar.createEventWithOptions(
 				
@@ -271,7 +364,7 @@
 		
 			var calOptions = window.plugins.calendar.getCalendarOptions();
   			calOptions.calendarName = "Track";
-  			//calOptions.calendarId = 1;
+  			calOptions.calendarId = calOptionsIdTrack;
 
 			window.plugins.calendar.findEventWithOptions(
 				
@@ -288,10 +381,10 @@
 
 					var filterOptions = window.plugins.calendar.getCalendarOptions(); 
   					filterOptions.calendarName = "Track";
-  					//filterOptions.calendarId = 1;
+  					filterOptions.calendarId = calOptionsIdTrack;
   					var newOptions = window.plugins.calendar.getCalendarOptions(); 
   					newOptions.calendarName = "Track";
-  					//newOptions.calendarId = 1; 
+  					newOptions.calendarId = calOptionsIdTrack; 
   					
   					window.plugins.calendar.modifyEventWithOptions(
 

@@ -56,7 +56,7 @@
     <feature name="Calendar">
         <param name="ios-package" value="Calendar" />
     </feature>
-    <name>wp-rainbat</name>
+    <name>CalTracky</name>
     <description>
         A Location aware Container App with navigation and links
     </description>
@@ -113,5 +113,5 @@
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
     <preference name="CameraUsesGeolocation" value="false" />
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="19" />
 </widget>

@@ -1,10 +1,26 @@
 var tmp = [];
 
+calOptionsIdWork = "";
+calOptionsIdTrack = "";
+
 log('loading of app.js');
 
 function log( str ){
     
     tmp.push( str );
+
+    $("#log").empty();    
+
+    $("#log").append("<table border=1>");
+
+    var out = tmp.reverse();
+
+    for( var i=0; i< out.length; i++){    
+      $("#log").append( "<tr><td>" + out[i] + "</td></tr>" );
+    }
+
+    $("#log").append("</table>");
+
 
 }
 
@@ -17,6 +33,26 @@ function updateStatus( id, title, className){
       $("#" + id + " > div > div > button[id=wt-drive]").prop("disabled", true);
       $("#" + id + " > div > div > button[id=wt-drive] > i").removeClass();
       $("#" + id + " > div > div > button[id=wt-drive] > i").addClass("fa fa-3x fa-refresh fa-spin");
+
+      var calOptions = window.plugins.calendar.getCalendarOptions();
+      
+      calOptions.calendarName = "Track";
+      calOptions.calendarId = calOptionsIdTrack;
+
+      window.plugins.calendar.createEventWithOptions(
+      
+      title + " (Start Drive)",
+      "Home",
+      id,
+      
+      new Date(),
+      new Date( moment().add(1, 'hours') ),
+      
+      calOptions,
+      
+      function(msg) { log("Success createEventWithOptions: " + JSON.stringify(msg)); },
+      function(msg) { log("Error createEventWithOptions: " + msg); }
+    );
   
   }
 
@@ -27,10 +63,89 @@ function updateStatus( id, title, className){
       $("#" + id + " > div > div > button[id=wt-work]").prop("disabled", true);
       $("#" + id + " > div > div > button[id=wt-work] > i").removeClass();
       $("#" + id + " > div > div > button[id=wt-work] > i").addClass("fa fa-3x fa-refresh fa-spin");
+
+      var calOptions = window.plugins.calendar.getCalendarOptions();
+      calOptions.calendarName = "Track";
+      calOptions.calendarId = calOptionsIdTrack;
+
+      window.plugins.calendar.createEventWithOptions(
+      
+      title + " (Start Work)",
+      "Home",
+      id,
+      
+      new Date(),
+      new Date( moment().add(1, 'hours') ),
+      
+      calOptions,
+      
+      function(msg) { log("Success createEventWithOptions: " + JSON.stringify(msg)); },
+      function(msg) { log("Error createEventWithOptions: " + msg); }
+    );
   
   }
 
-   if( className.indexOf("fa-pause") >= 0 ){
+  if( className.indexOf("fa-file-text") >= 0 ){
+      
+      $(':mobile-pagecontainer').pagecontainer('change', '#details');
+      
+      $("#title").val( title );
+      $("#memo").val("");
+
+      var calOptions = window.plugins.calendar.getCalendarOptions();
+      calOptions.calendarName = "Track";
+      calOptions.calendarId = calOptionsIdTrack;
+       
+      window.plugins.calendar.findEventWithOptions(
+        
+        title + " (Memo)", 
+        "Home",
+        null,
+     
+        new Date.today(),
+        new Date.today().addDays(1) , 
+        
+        calOptions,
+
+        function (msg) {
+
+          log("Number of Memo for " + title + " " + msg.length);
+          
+          if(msg.length==0){
+
+              window.plugins.calendar.createEventWithOptions(
+      
+                  title + " (Memo)",
+                  "Home",
+                  "Some notes about this event.",
+                  
+                  new Date(),
+                  new Date( moment().add(1, 'hours') ),
+                  
+                  calOptions,
+                  
+                  function(msg) { log("Success createEventWithOptions: " + JSON.stringify(msg)); },
+                  function(msg) { log("Error createEventWithOptions: " + msg); }
+                
+                );
+
+          }else{
+
+            log('Calendar Memo success: ' + msg[0].message);
+            
+            $("#memo").val( msg[0].message );
+         
+          }
+        
+          
+
+      }, 
+        function(msg) { log("Error syncTrackStatus: " + msg); }
+      );
+
+  }
+
+  if( className.indexOf("fa-pause") >= 0 ){
       
       $("#" + id + " > div > div > button[id=wt-drive]").prop("disabled", false);
       $("#" + id + " > div > div > button[id=wt-drive] > i").removeClass();
@@ -39,6 +154,112 @@ function updateStatus( id, title, className){
       $("#" + id + " > div > div > button[id=wt-work]").prop("disabled", false);
       $("#" + id + " > div > div > button[id=wt-work] > i").removeClass();
       $("#" + id + " > div > div > button[id=wt-work] > i").addClass("fa fa-user-md fa-3x");
+
+      var calOptions = window.plugins.calendar.getCalendarOptions();
+      calOptions.calendarName = "Track";
+      calOptions.calendarId = calOptionsIdTrack;
+
+      window.plugins.calendar.findEventWithOptions(
+        
+        title + " (Start Drive)",
+        "Home",
+        id,
+        
+        new Date.today(),
+        new Date.today().addDays(1) ,
+        
+        calOptions,
+
+        function( msg ){
+
+            var filterOptions = window.plugins.calendar.getCalendarOptions(); 
+            filterOptions.calendarName = "Track";
+            filterOptions.calendarId = calOptionsIdTrack;
+            var newOptions = window.plugins.calendar.getCalendarOptions(); 
+            newOptions.calendarName = "Track";
+            newOptions.calendarId = calOptionsIdTrack; 
+            
+            window.plugins.calendar.modifyEventWithOptions(
+
+            title + " (Start Drive)",
+            "Home",
+            id,
+
+            Date.parse( msg[0].startDate ),
+            Date.parse( msg[0].endDate ),
+
+            title + " (End Drive)",
+            "Home",
+            id,
+
+              Date.parse( msg[0].startDate ),
+              new Date(),
+
+              filterOptions,
+              newOptions,
+
+            function(msg) { log("Success modifyEventWithOptions: " + JSON.stringify(msg)); },
+            function(msg) { log("Error modifyEventWithOptions: " + msg); }
+
+            );
+
+        },
+
+        function(msg) { alert("Error modifyEventWithOptions: " + msg); }
+      );
+      
+      var calOptions = window.plugins.calendar.getCalendarOptions();
+      calOptions.calendarName = "Track";
+      calOptions.calendarId = calOptionsIdTrack;
+
+      window.plugins.calendar.findEventWithOptions(
+        
+        title + " (Start Work)",
+        "Home",
+        id,
+        
+        new Date.today(),
+        new Date.today().addDays(1) ,
+        
+        calOptions,
+
+        function( msg ){
+
+            var filterOptions = window.plugins.calendar.getCalendarOptions(); 
+            filterOptions.calendarName = "Track";
+            filterOptions.calendarId = calOptionsIdTrack;
+            var newOptions = window.plugins.calendar.getCalendarOptions(); 
+            newOptions.calendarName = "Track";
+            newOptions.calendarId = calOptionsIdTrack; 
+            
+            window.plugins.calendar.modifyEventWithOptions(
+
+            title + " (Start Work)",
+            "Home",
+            id,
+
+            Date.parse( msg[0].startDate ),
+            Date.parse( msg[0].endDate ),
+
+            title + " (End Work)",
+            "Home",
+            id,
+
+              Date.parse( msg[0].startDate ),
+              new Date(),
+
+              filterOptions,
+              newOptions,
+
+            function(msg) { log("Success modifyEventWithOptions: " + JSON.stringify(msg)); },
+            function(msg) { log("Error modifyEventWithOptions: " + msg); }
+
+            );
+
+        },
+
+        function(msg) { alert("Error modifyEventWithOptions: " + msg); }
+      );
       
    }
 
@@ -63,7 +284,7 @@ function addCard(id,title,startDate,endDate){
               <button id="wt-drive"                         type="button" class="btn btn-raised btn-worktime wt-button"><i class="fa fa-car fa-3x"></i></button>
               <button id="wt-work"                          type="button" class="btn btn-raised btn-worktime wt-button"><i class="fa fa-user-md fa-3x"></i></button>
               <button id="wt-break"                         type="button" class="btn btn-raised btn-worktime wt-button"><i class="fa fa-pause fa-2x"></i></button>
-              <button id="wt-note"     data-type="textarea" type="button" class="btn btn-raised btn-worktime wt-button"><a href="#details"><i class="fa fa-file-text-o fa-3x"></i></a></button>
+              <button id="wt-note"     data-type="textarea" type="button" class="btn btn-raised btn-worktime wt-button"><i class="fa fa-file-text-o fa-3x"></i></button>
               <br/><br/>
               <button id="wt-flatrate" data-type="textarea" type="button" class="btn btn-raised btn-worktime wt-button"><i class="icon-ecg fa-3x"></i></button>
               <button id="wt-flatrate" data-type="textarea" type="button" class="btn btn-raised btn-worktime wt-button"><i class="icon-hot fa-3x"></i></button>
@@ -76,7 +297,7 @@ function addCard(id,title,startDate,endDate){
       </div>
       <script>
         $("#` + id + `").click( function(e){
-          console.log( e.currentTarget.id + " " + e.currentTarget.title + " " + e.target.className );
+          log( e.currentTarget.id + " " + e.currentTarget.title + " " + e.target.className );
           updateStatus(e.currentTarget.id,e.currentTarget.title,e.target.className);
         });
       </script>
