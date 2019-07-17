@@ -102,7 +102,7 @@
 
 
 						}else{
-							alert( "Found Options " + msg[0].message);
+							$("#cards").append( "Found Options " + msg[0].message);
 						}
 
 					}, 
@@ -128,7 +128,7 @@
 			     );
 
 				if( calOptionsIdWork == "" || calOptionsIdTrack == ""){
-					alert("Calendars Work and Track not found.");
+					$("#cards").append("<b>Calendars Work and Track not found.</b>");
 				}
 
 				var calOptions = window.plugins.calendar.getCalendarOptions();
