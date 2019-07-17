@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "0730"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "caltracky.app"
-               BlueprintName = "caltracky"
-               ReferencedContainer = "container:caltracky.xcodeproj">
+               BuildableName = "CalTracky.app"
+               BlueprintName = "CalTracky"
+               ReferencedContainer = "container:CalTracky.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "caltracky.app"
-            BlueprintName = "caltracky"
-            ReferencedContainer = "container:caltracky.xcodeproj">
+            BuildableName = "CalTracky.app"
+            BlueprintName = "CalTracky"
+            ReferencedContainer = "container:CalTracky.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "caltracky.app"
-            BlueprintName = "caltracky"
-            ReferencedContainer = "container:caltracky.xcodeproj">
+            BuildableName = "CalTracky.app"
+            BlueprintName = "CalTracky"
+            ReferencedContainer = "container:CalTracky.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "caltracky.app"
-            BlueprintName = "caltracky"
-            ReferencedContainer = "container:caltracky.xcodeproj">
+            BuildableName = "CalTracky.app"
+            BlueprintName = "CalTracky"
+            ReferencedContainer = "container:CalTracky.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -16,15 +16,6 @@
     <string>ch.rainbat.wp-app</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
-    <key>CFBundleLocalizations</key>
-    <array>
-      <string>en</string>
-      <string>de</string>
-      <string>nl</string>
-      <string>fr</string>
-      <string>it</string>
-      <string>pt-BR</string>
-    </array>
     <key>CFBundleName</key>
     <string>${PRODUCT_NAME}</string>
     <key>CFBundlePackageType</key>
@@ -37,29 +28,10 @@
     <string>1.0.0</string>
     <key>LSRequiresIPhoneOS</key>
     <true/>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-      <key>NSAllowsArbitraryLoads</key>
-      <true/>
-    </dict>
-    <key>NSCalendarsUsageDescription</key>
-    <string>Find Events in Calendar for TimeTracking</string>
-    <key>NSCameraUsageDescription</key>
-    <string/>
-    <key>NSContactsUsageDescription</key>
-    <string/>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string/>
     <key>NSMainNibFile</key>
     <string/>
     <key>NSMainNibFile~ipad</key>
     <string/>
-    <key>NSMicrophoneUsageDescription</key>
-    <string/>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string/>
-    <key>UIRequiresFullScreen</key>
-    <true/>
     <key>UISupportedInterfaceOrientations</key>
     <array>
       <string>UIInterfaceOrientationPortrait</string>
@@ -73,5 +45,33 @@
       <string>UIInterfaceOrientationPortraitUpsideDown</string>
       <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
+    <key>UIRequiresFullScreen</key>
+    <true/>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+      <key>NSAllowsArbitraryLoads</key>
+      <true/>
+    </dict>
+    <key>CFBundleLocalizations</key>
+    <array>
+      <string>en</string>
+      <string>de</string>
+      <string>nl</string>
+      <string>fr</string>
+      <string>it</string>
+      <string>pt-BR</string>
+    </array>
+    <key>NSCalendarsUsageDescription</key>
+    <string>Find Events in Calendar for TimeTracking</string>
+    <key>NSContactsUsageDescription</key>
+    <string/>
+    <key>NSCameraUsageDescription</key>
+    <string/>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string/>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string/>
+    <key>NSMicrophoneUsageDescription</key>
+    <string/>
   </dict>
 </plist>

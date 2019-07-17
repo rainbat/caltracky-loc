@@ -64,7 +64,7 @@
 			     	function(msg){
 			     		log("Error listCalendars");
 			     	}
-			     	);
+			     );
 
 
 			     window.plugins.calendar.findEventWithOptions(
@@ -113,6 +113,24 @@
 
 			$('#today').on('click', function () {
          	
+				window.plugins.calendar.listCalendars(
+			     	function(msg){
+			     		msg.forEach(function(entry) {
+			     			if ( entry.name == "Work" )  calOptionsIdWork = entry.id;
+			     			if ( entry.name == "Track" ) calOptionsIdTrack = entry.id;
+			     		});
+			     		log( "calOptionsIdWork:" + calOptionsIdWork);
+			     		log( "calOptionsIdTrack:" + calOptionsIdTrack);
+			     	},
+			     	function(msg){
+			     		log("Error listCalendars");
+			     	}
+			     );
+
+				if( calOptionsIdWork == "" || calOptionsIdTrack == ""){
+					alert("Calendars Work and Track not found.");
+				}
+
 				var calOptions = window.plugins.calendar.getCalendarOptions();
 	  			calOptions.calendarName = "Work";
 	  			calOptions.calendarId = calOptionsIdWork;

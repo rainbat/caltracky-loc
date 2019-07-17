@@ -8,53 +8,56 @@
   },
   "installed_plugins": {
     "cordova-plugin-battery-status": {
-      "PACKAGE_NAME": "ch.rainbat.caltracky"
+      "PACKAGE_NAME": "ch.rainbat.wp-app"
+    },
+    "cordova-plugin-calendar": {
+      "CALENDAR_USAGE_DESCRIPTION": "Find Events in Calendar for TimeTracking",
+      "CONTACTS_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "ch.rainbat.wp-app"
     },
     "cordova-plugin-camera": {
       "CAMERA_USAGE_DESCRIPTION": " ",
       "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
-      "PACKAGE_NAME": "ch.rainbat.caltracky"
+      "PACKAGE_NAME": "ch.rainbat.wp-app"
+    },
+    "cordova-plugin-contacts": {
+      "PACKAGE_NAME": "ch.rainbat.wp-app"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "ch.rainbat.wp-app"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "ch.rainbat.wp-app"
+    },
+    "cordova-plugin-geolocation": {
+      "GEOLOCATION_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "ch.rainbat.wp-app"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "ch.rainbat.wp-app"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "ch.rainbat.wp-app"
     },
     "cordova-plugin-media-capture": {
       "CAMERA_USAGE_DESCRIPTION": " ",
       "MICROPHONE_USAGE_DESCRIPTION": " ",
       "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
-      "PACKAGE_NAME": "ch.rainbat.caltracky"
-    },
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "ch.rainbat.caltracky"
-    },
-    "cordova-plugin-dialogs": {
-      "PACKAGE_NAME": "ch.rainbat.caltracky"
-    },
-    "cordova-plugin-geolocation": {
-      "GEOLOCATION_USAGE_DESCRIPTION": " ",
-      "PACKAGE_NAME": "ch.rainbat.caltracky"
-    },
-    "cordova-plugin-globalization": {
-      "PACKAGE_NAME": "ch.rainbat.caltracky"
-    },
-    "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "ch.rainbat.caltracky"
+      "PACKAGE_NAME": "ch.rainbat.wp-app"
     },
     "cordova-plugin-network-information": {
-      "PACKAGE_NAME": "ch.rainbat.caltracky"
+      "PACKAGE_NAME": "ch.rainbat.wp-app"
     },
     "cordova-plugin-vibration": {
-      "PACKAGE_NAME": "ch.rainbat.caltracky"
-    },
-    "cordova-plugin-calendar": {
-      "CALENDAR_USAGE_DESCRIPTION": "Find Events in Calendar for TimeTracking",
-      "CONTACTS_USAGE_DESCRIPTION": " ",
-      "PACKAGE_NAME": "ch.rainbat.caltracky"
+      "PACKAGE_NAME": "ch.rainbat.wp-app"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-compat": {
-      "PACKAGE_NAME": "ch.rainbat.caltracky"
+      "PACKAGE_NAME": "ch.rainbat.wp-app"
     },
     "cordova-plugin-file": {
-      "PACKAGE_NAME": "ch.rainbat.caltracky"
+      "PACKAGE_NAME": "ch.rainbat.wp-app"
     }
   }
 }
