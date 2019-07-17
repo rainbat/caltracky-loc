@@ -25,6 +25,12 @@
     <plugin name="cordova-plugin-calendar" source="npm">
         <variable name="CALENDAR_USAGE_DESCRIPTION" value="Find Events in Calendar for TimeTracking" />
     </plugin>
+    <edit-config target="NSLocationAlwaysUsageDescription" file="*-Info.plist" mode="merge">
+        <string>We want to remind you when you are there!</string>
+    </edit-config>
+    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+        <string>We want to remind you when you are there!</string>
+    </edit-config>
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
