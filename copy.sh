@@ -5,4 +5,7 @@ git add .
 git commit -m "update" .
 git push origin
 cd ~/Dropbox/caltracky-loc
+git add .
+git commit -m "update" .
+git push origin
 
