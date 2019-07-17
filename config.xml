@@ -7,6 +7,7 @@
     <author email="info@rainbat.ch" href="https://www.rainbat.ch">
         rainbat solutions GmbH
     </author>
+    <icon src="icon.png" />
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="19" />
