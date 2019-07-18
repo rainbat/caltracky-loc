@@ -43,5 +43,6 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <icon src="icon.png" />
+    <plugin name="cordova-plugin-email" spec="1.2.7" />
     <engine name="ios" spec="^4.5.5" />
 </widget>

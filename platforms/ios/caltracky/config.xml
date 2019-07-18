@@ -59,6 +59,9 @@
     <feature name="Vibration">
         <param name="ios-package" value="CDVVibration" />
     </feature>
+    <feature name="EmailComposer">
+        <param name="ios-package" value="APPEmailComposer" />
+    </feature>
     <name>CalTracky</name>
     <description>
         A Location aware Container App with navigation and links

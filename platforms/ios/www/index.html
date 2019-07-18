@@ -332,7 +332,7 @@
 		<br/>
 		<a class="ui-btn" id="createFile">createFile</a>
 		<a class="ui-btn" id="readFile">readFile</a>
-		<a class="ui-btn" id="openFile">openFile</a>
+		<a class="ui-btn" id="sendFile">sendFile</a>
 		
 	</div><!-- /content -->
 
@@ -503,24 +503,27 @@
 
 			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
 
-				console.log('file system open: ' + fs.name);
-			    console.log('file system open: ' + fs.path);
+				log('file system open: ' + fs.name);
 			    
 			    fs.root.getFile("newPersistentFile.txt", { 
 			    	create: true, 
 			    	exclusive: false 
 			    	}, 
 			    	function (fileEntry) {
-			    		console.log("fileEntry is file?" + fileEntry.isFile.toString());
+			    		
+			    		log("fileEntry is file?" + fileEntry.isFile.toString());
+			    		log("Storing tmpFile Path :" + fileEntry.nativeURL);
+
+			    		tmpFile = fileEntry.nativeURL;
 
 						fileEntry.createWriter(function (fileWriter) {
 
-					        fileWriter.onwriteend = function() {
-					            console.log("Successful file write...");
+							fileWriter.onwriteend = function() {
+					            log("Successful file write...");
 					        };
 
 					        fileWriter.onerror = function (e) {
-					            console.log("Failed file write: " + e.toString());
+					            log("Failed file write: " + e.toString());
 					        };
 
 					        fileWriter.write(
@@ -533,15 +536,15 @@
 					        var reader = new FileReader();
 
 					        reader.onloadend = function() {
-					            console.log("Successful file read: " + this.result);
-					            console.log(fileEntry.fullPath + ": " + this.result);
+					            log("Successful file read: " + this.result);
+					            log(fileEntry.fullPath + ": " + this.result);
 					        };
 
 					        reader.readAsText(file);
 
 					    }, 
 					    function( msg ){
-					    	console.log( msg );
+					    	log( msg );
 					    });
 
 			    	},
@@ -557,30 +560,35 @@
 
 			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
 
-				console.log('file system open: ' + fs.name);
-			    console.log('file system open: ' + fs.path);
+				log('file system open: ' + fs.name);
 			    
 			    fs.root.getFile("newPersistentFile.txt", { 
 			    	create: true, 
 			    	exclusive: false 
 			    	}, 
 			    	function (fileEntry) {
-			    		console.log("fileEntry is file?" + fileEntry.isFile.toString());
 
+			    		log("fileEntry is file?" + fileEntry.isFile.toString());
+			    		tmpFile = fileEntry.nativeURL;
+						log("Storing tmpFile Path :" + fileEntry.nativeURL);
+					        
 						fileEntry.file(function (file) {
-					    
+					    	
+							
+
+
 					        var reader = new FileReader();
 
 					        reader.onloadend = function() {
-					            console.log("Successful file read: " + this.result);
-					            console.log(fileEntry.fullPath + ": " + this.result);
+					            log("Successful file read: " + this.result);
+					            log(fileEntry.fullPath + ": " + this.result);
 					        };
 
 					        reader.readAsText(file);
 
 					    }, 
 					    function( msg ){
-					    	console.log( msg );
+					    	log( msg );
 					    });
 
 			    	},
@@ -593,19 +601,17 @@
 		});
 
 
-		$('#openFile').on('click', function () {
-			cordova.plugins.fileOpener2.open(
-			    'dvfile://localhost/persistent/newPersistentFile.txt',
-			    'text/plain',
-			    {
-			        error : function(e) {
-			            console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
-			        },
-			        success : function () {
-			            console.log('file opened successfully');
-			        }
-			    }
-			);
+		$('#sendFile').on('click', function () {
+			cordova.plugins.email.open({
+			    to:          Array("info@rainbat.ch"), // email addresses for TO field
+			    subject:    "test", // subject of the email
+			    body:       "test", // email body (for HTML, set isHtml to true)
+			    isHtml:    true, // indicats if the body is HTML or plain text
+				attachments: tmpFile
+			}, 
+			function( msg ){
+				log("mail sent");
+			}, this);
 		});
 
 	</script>

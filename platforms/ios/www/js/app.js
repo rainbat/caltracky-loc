@@ -2,6 +2,7 @@ var tmp = [];
 
 calOptionsIdWork = "";
 calOptionsIdTrack = "";
+tmpFile = "";
 
 log('loading of app.js');
 

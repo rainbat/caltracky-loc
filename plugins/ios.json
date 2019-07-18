@@ -50,6 +50,9 @@
     },
     "cordova-plugin-vibration": {
       "PACKAGE_NAME": "ch.rainbat.caltracky"
+    },
+    "cordova-plugin-email": {
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     }
   },
   "dependent_plugins": {
