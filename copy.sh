@@ -1,6 +1,11 @@
 rm *.apk
 rm *.ipa
 
+cp config.xml www/
+
+#cordova-gen-icon
+#cordova-gen-icon -a
+
 cp -R www/ ~/Desktop/CalTracky/
 cp config.xml ~/Desktop/CalTracky/
 cd ~/Desktop/CalTracky/
