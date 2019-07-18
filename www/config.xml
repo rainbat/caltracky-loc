@@ -46,8 +46,8 @@
     <plugin name="cordova-plugin-email" spec="1.2.7" />
     <engine name="ios" spec="^4.5.5" />
 
-    <platform name="ios">
-    
+ 
+     <platform name="ios">
         <icon src="res/icon/ios/icon-1024.png" width="1024" height="1024"/>
         <icon src="res/icon/ios/icon-small.png" width="29" height="29"/>
         <icon src="res/icon/ios/icon-small@2x.png" width="58" height="58"/>
@@ -131,4 +131,19 @@
         -->
     </platform>
 
+    <!--
+    <platform name="windows">
+        <icon src="res/icon/windows/storelogo.png" target="StoreLogo"/>
+        <icon src="res/icon/windows/smalllogo.png" target="Square30x30Logo"/>
+        <icon src="res/icon/windows/Square44x44Logo.png" target="Square44x44Logo"/>
+        <icon src="res/icon/windows/Square70x70Logo.png" target="Square70x70Logo"/>
+        <icon src="res/icon/windows/Square71x71Logo.png" target="Square71x71Logo"/>
+        <icon src="res/icon/windows/Square150x150Logo.png" target="Square150x150Logo"/>
+        <icon src="res/icon/windows/Square310x310Logo.png" target="Square310x310Logo"/>
+
+        <splash src="res/screen/windows/splashscreen.png" target="SplashScreen"/>
+        <splash src="res/screen/windows/splashscreenphone.png" target="SplashScreenPhone"/>
+    </platform>
+    -->
+       
 </widget>
