@@ -5,6 +5,66 @@
   },
   "config_munge": {
     "files": {
+      "*-Info.plist": {
+        "parents": {
+          "NSLocationAlwaysUsageDescription": [
+            {
+              "xml": "<string>We want to remind you when you are there!</string>",
+              "count": 1,
+              "mode": "merge",
+              "id": "config.xml"
+            }
+          ],
+          "NSLocationWhenInUseUsageDescription": [
+            {
+              "xml": "<string> </string>",
+              "count": 1
+            },
+            {
+              "xml": "<string>We want to remind you when you are there!</string>",
+              "count": 2,
+              "mode": "merge",
+              "id": "config.xml"
+            }
+          ],
+          "CFBundleLocalizations": [
+            {
+              "xml": "<array><string>en</string><string>de</string><string>nl</string><string>fr</string><string>it</string><string>pt-BR</string></array>",
+              "count": 1
+            }
+          ],
+          "NSCalendarsUsageDescription": [
+            {
+              "xml": "<string>Find Events in Calendar for TimeTracking</string>",
+              "count": 1
+            }
+          ],
+          "NSContactsUsageDescription": [
+            {
+              "xml": "<string> </string>",
+              "count": 1
+            }
+          ],
+          "NSCameraUsageDescription": [
+            {
+              "xml": "<string> </string>",
+              "count": 2
+            }
+          ],
+          "NSPhotoLibraryUsageDescription": [
+            {
+              "xml": "<string> </string>",
+              "count": 2
+            }
+          ],
+          "NSMicrophoneUsageDescription": [
+            {
+              "xml": "<string> </string>",
+              "count": 1
+            }
+          ]
+        }
+      },
       "config.xml": {
         "parents": {
           "/*": [
@@ -66,109 +126,59 @@
             }
           ]
         }
-      },
-      "*-Info.plist": {
-        "parents": {
-          "CFBundleLocalizations": [
-            {
-              "xml": "<array><string>en</string><string>de</string><string>nl</string><string>fr</string><string>it</string><string>pt-BR</string></array>",
-              "count": 1
-            }
-          ],
-          "NSCalendarsUsageDescription": [
-            {
-              "xml": "<string>Find Events in Calendar for TimeTracking</string>",
-              "count": 1
-            }
-          ],
-          "NSContactsUsageDescription": [
-            {
-              "xml": "<string> </string>",
-              "count": 1
-            }
-          ],
-          "NSCameraUsageDescription": [
-            {
-              "xml": "<string> </string>",
-              "count": 2
-            }
-          ],
-          "NSPhotoLibraryUsageDescription": [
-            {
-              "xml": "<string> </string>",
-              "count": 2
-            }
-          ],
-          "NSLocationWhenInUseUsageDescription": [
-            {
-              "xml": "<string />",
-              "count": 1
-            },
-            {
-              "xml": "<string> </string>",
-              "count": 1
-            }
-          ],
-          "NSMicrophoneUsageDescription": [
-            {
-              "xml": "<string> </string>",
-              "count": 1
-            }
-          ]
-        }
       }
     }
   },
   "installed_plugins": {
     "cordova-plugin-battery-status": {
-      "PACKAGE_NAME": "ch.rainbat.wp-app"
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
     "cordova-plugin-calendar": {
       "CALENDAR_USAGE_DESCRIPTION": "Find Events in Calendar for TimeTracking",
       "CONTACTS_USAGE_DESCRIPTION": " ",
-      "PACKAGE_NAME": "ch.rainbat.wp-app"
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
     "cordova-plugin-compat": {
-      "PACKAGE_NAME": "ch.rainbat.wp-app"
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
     "cordova-plugin-camera": {
       "CAMERA_USAGE_DESCRIPTION": " ",
       "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
-      "PACKAGE_NAME": "ch.rainbat.wp-app"
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
     "cordova-plugin-contacts": {
-      "PACKAGE_NAME": "ch.rainbat.wp-app"
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "ch.rainbat.wp-app"
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
     "cordova-plugin-dialogs": {
-      "PACKAGE_NAME": "ch.rainbat.wp-app"
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
     "cordova-plugin-file": {
-      "PACKAGE_NAME": "ch.rainbat.wp-app"
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
     "cordova-plugin-geolocation": {
       "GEOLOCATION_USAGE_DESCRIPTION": " ",
-      "PACKAGE_NAME": "ch.rainbat.wp-app"
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
     "cordova-plugin-globalization": {
-      "PACKAGE_NAME": "ch.rainbat.wp-app"
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
     "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "ch.rainbat.wp-app"
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
     "cordova-plugin-media-capture": {
       "CAMERA_USAGE_DESCRIPTION": " ",
       "MICROPHONE_USAGE_DESCRIPTION": " ",
       "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
-      "PACKAGE_NAME": "ch.rainbat.wp-app"
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
     "cordova-plugin-network-information": {
-      "PACKAGE_NAME": "ch.rainbat.wp-app"
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
     "cordova-plugin-vibration": {
-      "PACKAGE_NAME": "ch.rainbat.wp-app"
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     }
   },
   "dependent_plugins": {},
