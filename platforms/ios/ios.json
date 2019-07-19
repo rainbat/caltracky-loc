@@ -18,7 +18,7 @@
           "NSLocationWhenInUseUsageDescription": [
             {
               "xml": "<string>We want to remind you when you are there!</string>",
-              "count": 3,
+              "count": 1,
               "mode": "merge",
               "id": "config.xml"
             }
