@@ -45,72 +45,7 @@
 		<a class="ui-btn" id="today">Sync Today</a>
 		<center><div id="cards"></div></center>
 		<a href="#settings" class="ui-btn">Settings</a>
-		<a class="ui-btn" id="options">Sync Options</a>
 		<script>
-			$('#options').on('click', function () {
-         	
-				var calOptions = window.plugins.calendar.getCalendarOptions();
-	  			calOptions.calendarName = "Work";
-	  			calOptions.calendarId = calOptionsIdWork;
-			     
-			     window.plugins.calendar.listCalendars(
-			     	function(msg){
-			     		msg.forEach(function(entry) {
-			     			if ( entry.name == "Work" )  calOptionsIdWork = entry.id;
-			     			if ( entry.name == "Track" ) calOptionsIdTrack = entry.id;
-			     		});
-			     		log( "calOptionsIdWork:" + calOptionsIdWork);
-			     		log( "calOptionsIdTrack:" + calOptionsIdTrack);
-			     	},
-			     	function(msg){
-			     		log("Error listCalendars");
-			     	}
-			     );
-
-
-			     window.plugins.calendar.findEventWithOptions(
-			     	
-			     	"CalTracky Options", 
-			     	null, 
-			     	null, 
-			     	
-					new Date.parse("2018-01-01"),
-					new Date.parse("2022-31-12"), 
-			     	
-			     	calOptions,
-
-			     	function (msg) {
-
-					    log('Calendar Found Options success: ' + msg.length);
-						
-						if( msg.length == 0){
-
-				            window.plugins.calendar.createEventWithOptions(
-      
-			                  "CalTracky Options",
-			                  "Home",
-			                  "{ 'test' : 'test' }",
-			                  
-			                  new Date(),
-			                  new Date( moment().add(1, 'hours') ),
-			                  
-			                  calOptions,
-			                  
-			                  function(msg) { log("Success createEventWithOptions: " + JSON.stringify(msg)); },
-			                  function(msg) { log("Error createEventWithOptions: " + msg); }
-			                
-			                );
-
-
-						}else{
-							$("#cards").append( "Found Options " + msg[0].message);
-						}
-
-					}, 
-			     	function(msg) { log("Error findEventWithOptions: " + msg); }
-			     );
-
-			});
 
 			$('#today').on('click', function () {
          	
@@ -318,7 +253,7 @@
 		<!-- <a class="ui-btn" id="syncTrackStatus">syncTrackStatus</a> -->
 		
 		<br/>
-		
+		<a class="ui-btn" id="options">Sync Options</a>
 		<a class="ui-btn" id="updateLog">updateLog</a>
 		<div id="log" class="ui-shadow ui-listview-inset"></div>
 		<div id="track" class="ui-shadow ui-listview-inset"></div>
@@ -337,7 +272,71 @@
 	</div><!-- /content -->
 
 	<script>
+		$('#options').on('click', function () {
+         	
+			var calOptions = window.plugins.calendar.getCalendarOptions();
+  			calOptions.calendarName = "Work";
+  			calOptions.calendarId = calOptionsIdWork;
+		     
+		     window.plugins.calendar.listCalendars(
+		     	function(msg){
+		     		msg.forEach(function(entry) {
+		     			if ( entry.name == "Work" )  calOptionsIdWork = entry.id;
+		     			if ( entry.name == "Track" ) calOptionsIdTrack = entry.id;
+		     		});
+		     		log( "calOptionsIdWork:" + calOptionsIdWork);
+		     		log( "calOptionsIdTrack:" + calOptionsIdTrack);
+		     	},
+		     	function(msg){
+		     		log("Error listCalendars");
+		     	}
+		     );
 
+
+		     window.plugins.calendar.findEventWithOptions(
+		     	
+		     	"CalTracky Options", 
+		     	null, 
+		     	null, 
+		     	
+				new Date.parse("2018-01-01"),
+				new Date.parse("2022-31-12"), 
+		     	
+		     	calOptions,
+
+		     	function (msg) {
+
+				    log('Calendar Found Options success: ' + msg.length);
+					
+					if( msg.length == 0){
+
+			            window.plugins.calendar.createEventWithOptions(
+  
+		                  "CalTracky Options",
+		                  "Home",
+		                  "{ 'test' : 'test' }",
+		                  
+		                  new Date(),
+		                  new Date( moment().add(1, 'hours') ),
+		                  
+		                  calOptions,
+		                  
+		                  function(msg) { log("Success createEventWithOptions: " + JSON.stringify(msg)); },
+		                  function(msg) { log("Error createEventWithOptions: " + msg); }
+		                
+		                );
+
+
+					}else{
+						$("#cards").append( "Found Options " + msg[0].message);
+					}
+
+				}, 
+		     	function(msg) { log("Error findEventWithOptions: " + msg); }
+		     );
+
+		});
+		
 		$('#updateLog').on('click', function () {
 
 			$("#log").empty();    

@@ -5,9 +5,11 @@ rm *.ipa
 #cordova-gen-icon
 #cordova-gen-icon -a
 
-cp -R www/ ~/Desktop/CalTracky/
-cp config.xml ~/Desktop/CalTracky/
-cd ~/Desktop/CalTracky/
+cp -R www/ ~/Dropbox/CalTracky/
+cp config.xml ~/Dropbox/CalTracky/
+cp -R res ~/Dropbox/CalTracky/
+cd ~/Dropbox/CalTracky/
+
 git add .
 git commit -m "update" .
 git push origin
@@ -20,7 +22,7 @@ git push origin
 pgb unlock ios 1082720
 pgb unlock android 390090
 pgb update 2834269
-pgb build 2834269
+#pgb build 2834269
 
 pgb download 2834269 ios CalTracky.ipa
 pgb download 2834269 android CalTracky.apk
