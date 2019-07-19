@@ -1,8 +1,7 @@
 rm *.apk
 rm *.ipa
 
-cp config.xml www/
-
+#cp config.xml www/
 #cordova-gen-icon
 #cordova-gen-icon -a
 
@@ -22,7 +21,7 @@ pgb unlock ios 1082720
 pgb unlock android 390090
 pgb build 2834269
 
-pgp update 2834269
+pgb update 2834269
 pgb download 2834269 ios CalTracky.ipa
 pgb download 2834269 android CalTracky.apk
 
