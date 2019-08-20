@@ -98,11 +98,131 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		+GIJFSy6mcD3/mrXLyx2g6deqHs=
+		BdgQZ2tXJN4gmeKhTWakwt/CtGM=
+		</data>
+		<key>CDVCapture.bundle/controls_bg.png</key>
+		<data>
+		xIN1nlKT1Cv/7P0RRRjRiqDmgcM=
+		</data>
+		<key>CDVCapture.bundle/controls_bg@2x.png</key>
+		<data>
+		/JjoVIaovIBao+GcSbUR+J/uH80=
+		</data>
+		<key>CDVCapture.bundle/controls_bg@2x~ipad.png</key>
+		<data>
+		WAxs/wl5r3Vdmfe+LEOoC35D3kw=
+		</data>
+		<key>CDVCapture.bundle/controls_bg~ipad.png</key>
+		<data>
+		dXhIxrANYjO4ggr9DvL4LugtNtw=
+		</data>
+		<key>CDVCapture.bundle/de.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6I3SFoWWUS6apP/Bme40Jk3hVOo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>CDVCapture.bundle/en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			CeYtR15hSvjyb4M2WE1Jff1QqiE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>CDVCapture.bundle/es.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			7nM4Esa6Sb4xFrW0Yaq3LAoki0k=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>CDVCapture.bundle/microphone-568h@2x~iphone.png</key>
+		<data>
+		KFv6FATezeZlzYYkfkMd8cELKyk=
+		</data>
+		<key>CDVCapture.bundle/microphone.png</key>
+		<data>
+		EB4Z4Ucd46Fq5XyJ7XtU0vIKQDE=
+		</data>
+		<key>CDVCapture.bundle/microphone@2x.png</key>
+		<data>
+		8wPpeqT7rFRPwKnLKeNLp3XDTvs=
+		</data>
+		<key>CDVCapture.bundle/microphone@2x~ipad.png</key>
+		<data>
+		IIs7cGjL1SwLOj/hgHjz6FAmb1g=
+		</data>
+		<key>CDVCapture.bundle/microphone~ipad.png</key>
+		<data>
+		zHKiKteWSwFDKqF6l4RiZSnib1A=
+		</data>
+		<key>CDVCapture.bundle/record_button.png</key>
+		<data>
+		PbKFvkKJyr/3l1jB+RtSp4xcbJ4=
+		</data>
+		<key>CDVCapture.bundle/record_button@2x.png</key>
+		<data>
+		c5mCMIk/dVEzWqpx5bhd7/+ShUw=
+		</data>
+		<key>CDVCapture.bundle/record_button@2x~ipad.png</key>
+		<data>
+		63F6LZKIHrJuNCXGXZuIt0A5kv8=
+		</data>
+		<key>CDVCapture.bundle/record_button~ipad.png</key>
+		<data>
+		HC/YPukmDtEt6OAQYxLdkxNyc7Y=
+		</data>
+		<key>CDVCapture.bundle/recording_bg.png</key>
+		<data>
+		ZNagG9STNHWMhmxadGoaHtc+uI8=
+		</data>
+		<key>CDVCapture.bundle/recording_bg@2x.png</key>
+		<data>
+		iKckW54kjD4zsIDtHGJsxQzF1Wg=
+		</data>
+		<key>CDVCapture.bundle/recording_bg@2x~ipad.png</key>
+		<data>
+		eWYnNM5t90TEdIlwhn+mO1uV0+w=
+		</data>
+		<key>CDVCapture.bundle/recording_bg~ipad.png</key>
+		<data>
+		jk3QF8bqLIAYUFuhEngOexBI0g0=
+		</data>
+		<key>CDVCapture.bundle/se.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			I5I3LPH+OWZTsU4WPRv8Nc7P3uE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>CDVCapture.bundle/stop_button.png</key>
+		<data>
+		1FeOIJC/ST8sLCXJcX1kRHrdfrg=
+		</data>
+		<key>CDVCapture.bundle/stop_button@2x.png</key>
+		<data>
+		oPThgxKhZvW3158u1HLALLJKPeU=
+		</data>
+		<key>CDVCapture.bundle/stop_button@2x~ipad.png</key>
+		<data>
+		tKI2Zkc7WAHZgX8uywAdRZ2zCtw=
+		</data>
+		<key>CDVCapture.bundle/stop_button~ipad.png</key>
+		<data>
+		BwsYSepAdB0lzFaojBFNr2yMphI=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		1Dug+MzbIH0BbP8H4DgPjbaTtKY=
+		NploA3qh+YdxpRLS0v3OLoe25eg=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -110,7 +230,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		9NLGGRLU1ztff9m8PMX3Fd47KZ8=
+		6qweJFyqImRgYl9PXaYubdhAf+A=
 		</data>
 		<key>CDVNotification.bundle/beep.wav</key>
 		<data>
@@ -118,11 +238,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		hjZHsWL8yUjJYwz3UYoIUi2mkU0=
+		EePmPJ5rY146pd7Rk5t9zpdAm+o=
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		XJ/iXsEU1gjwOfwVJl2HnqTgA5c=
+		PgTUEORtGL0dK4ysqrebiLP+yYE=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -130,11 +250,11 @@
 		</data>
 		<key>config.xml</key>
 		<data>
-		FAoydNPSBDxTl/7exWx/sEpj208=
+		x6Lh5pNA39tmqp8//PERmP0A6/A=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		turBNf7AF1iG+jzYOqpjv/mCqho=
+		p+wziztzQXSQk9KOAM+P0X4vnIE=
 		</data>
 		<key>www/archive/appstoreicon.png</key>
 		<data>
@@ -151,6 +271,10 @@
 		<key>www/archive/icon-icon.png</key>
 		<data>
 		ceGPP/qMeeyOZU6H4unyYS6AYms=
+		</data>
+		<key>www/backend.php</key>
+		<data>
+		uXj7A6LyJc9yyKMuFVPOBsQgpOI=
 		</data>
 		<key>www/cordova-js-src/exec.js</key>
 		<data>
@@ -174,7 +298,7 @@
 		</data>
 		<key>www/cordova_plugins.js</key>
 		<data>
-		DpbZyyBvNJVv73ckb0IY1Byy0G0=
+		27o3rAl5pLh2o4I82dI+SxfvbuA=
 		</data>
 		<key>www/css/bootstrap-material-design-0.3.0/css/material-fullpalette.min.css</key>
 		<data>
@@ -478,15 +602,31 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		F+FRaQKJWheCNhv9mMcfELIRpK0=
+		eF1yyKTqPTAsbdCSDDXO2KhcUOQ=
+		</data>
+		<key>www/js/FileSaver.js</key>
+		<data>
+		ppV+tNTWNc2klmEzFicm/vyFuQM=
+		</data>
+		<key>www/js/LICENSE</key>
+		<data>
+		Gp6FoKWG33mtGtgNsppJAM+bxsM=
 		</data>
 		<key>www/js/app.js</key>
 		<data>
-		FJ61Z0JGRoU5dsiYgtUQeGrFZA0=
+		dGNfnhcpl+engaPhKbiSBmkolVg=
+		</data>
+		<key>www/js/cpexcel.js</key>
+		<data>
+		NEFM9gb1skGdfZjplvkoNW5rSTA=
 		</data>
 		<key>www/js/date.js</key>
 		<data>
 		DjOgLq2sCbdjWBdfRwOyQbhz5no=
+		</data>
+		<key>www/js/index.js</key>
+		<data>
+		bSSCg0AVTLcqwPYSaEnpSKUwN/I=
 		</data>
 		<key>www/js/jquery.js</key>
 		<data>
@@ -496,13 +636,61 @@
 		<data>
 		GahXYSl58LuTaI0bpj6IzE0csiU=
 		</data>
+		<key>www/js/jszip.js</key>
+		<data>
+		R5XhQR6JofOhYoYlFHk5Qj9Vgrc=
+		</data>
 		<key>www/js/moment.js</key>
 		<data>
 		GFHW9+eaGgRjUH1qtm82Ktc6z+4=
 		</data>
+		<key>www/js/shim.min.js</key>
+		<data>
+		Z7IllA0NQSPoxrSE6c9Sl7PgwjA=
+		</data>
+		<key>www/js/xlsx.core.min.js</key>
+		<data>
+		6y/wLLvwHJ4HeZy9/+TlEVN4ZZ8=
+		</data>
+		<key>www/js/xlsx.core.min.map</key>
+		<data>
+		Lwy/7W63bibsFdjv7mc4SWuutFs=
+		</data>
+		<key>www/js/xlsx.extendscript.js</key>
+		<data>
+		aHHo13GmeOH/l3IourTuxhQTWPg=
+		</data>
+		<key>www/js/xlsx.full.min.js</key>
+		<data>
+		vgVmBN3TvoFbxJlcIQ1IR0OPUpU=
+		</data>
+		<key>www/js/xlsx.full.min.map</key>
+		<data>
+		2nqvjZ+uLBX1D1rrLg1P8sj2bK0=
+		</data>
+		<key>www/js/xlsx.js</key>
+		<data>
+		X0FLH5d/OfzVFVXlp88CUJKX2w0=
+		</data>
+		<key>www/js/xlsx.min.js</key>
+		<data>
+		/bnrIfXYAYNKqnKRr+gE7oW8BNo=
+		</data>
+		<key>www/js/xlsx.min.map</key>
+		<data>
+		UyfQsQ8/5AUqQ1nvknXgqmWQtec=
+		</data>
+		<key>www/plugins/cordova-plugin-badge/www/badge.js</key>
+		<data>
+		h//6K1YQS+L8Z1BtpfkSQVUFodI=
+		</data>
 		<key>www/plugins/cordova-plugin-battery-status/www/battery.js</key>
 		<data>
 		ldDpFZ4RbbROANrzzs/KaDUX2FE=
+		</data>
+		<key>www/plugins/cordova-plugin-bluetoothle/www/bluetoothle.js</key>
+		<data>
+		p8NZWwFmDaxBbXiWmLpLJRf4Dz8=
 		</data>
 		<key>www/plugins/cordova-plugin-calendar/www/Calendar.js</key>
 		<data>
@@ -583,6 +771,10 @@
 		<key>www/plugins/cordova-plugin-email/www/email_composer.js</key>
 		<data>
 		Ie9ssYlHB39MeICWZEu7ek/Qw4Q=
+		</data>
+		<key>www/plugins/cordova-plugin-file-opener2/www/plugins.FileOpener2.js</key>
+		<data>
+		9WQsEVQP618XAhkiRHsGTgZx+4g=
 		</data>
 		<key>www/plugins/cordova-plugin-file/www/DirectoryEntry.js</key>
 		<data>
@@ -700,6 +892,50 @@
 		<data>
 		FMUAWEtTk2a1AjfGLuh2wDgSQlc=
 		</data>
+		<key>www/plugins/cordova-plugin-local-notification/www/local-notification-core.js</key>
+		<data>
+		4k5ZzQslIyHPtcOkmMxtcjxwx0c=
+		</data>
+		<key>www/plugins/cordova-plugin-local-notification/www/local-notification-util.js</key>
+		<data>
+		J4cY9RDN5aqfCGJ/Lla6+xbdRFs=
+		</data>
+		<key>www/plugins/cordova-plugin-local-notification/www/local-notification.js</key>
+		<data>
+		cyVZFACG6w+OVT9N1qHwLhY8oPk=
+		</data>
+		<key>www/plugins/cordova-plugin-media-capture/www/CaptureAudioOptions.js</key>
+		<data>
+		jRm1E5d1rODQg5wNlYUYJZt/4Q8=
+		</data>
+		<key>www/plugins/cordova-plugin-media-capture/www/CaptureError.js</key>
+		<data>
+		JdLwzFcUGeJZlwc8tWMfkVN6t9Y=
+		</data>
+		<key>www/plugins/cordova-plugin-media-capture/www/CaptureImageOptions.js</key>
+		<data>
+		WOAv5J7Ku811T0EC1hkqrRkenwk=
+		</data>
+		<key>www/plugins/cordova-plugin-media-capture/www/CaptureVideoOptions.js</key>
+		<data>
+		YPkl4ysH6fGpBtTbiHcyS6IriRQ=
+		</data>
+		<key>www/plugins/cordova-plugin-media-capture/www/MediaFile.js</key>
+		<data>
+		ybPGRco63FAwXdFAgH6Bs25wbs0=
+		</data>
+		<key>www/plugins/cordova-plugin-media-capture/www/MediaFileData.js</key>
+		<data>
+		Xamso7OW8YqTjw8yKwQYfcN1OCw=
+		</data>
+		<key>www/plugins/cordova-plugin-media-capture/www/capture.js</key>
+		<data>
+		yEa+ZuJp+q36qRqMIjpSYokX9OA=
+		</data>
+		<key>www/plugins/cordova-plugin-media-capture/www/helpers.js</key>
+		<data>
+		HMmroA/+GSI+y81p4FJeTSivJPw=
+		</data>
 		<key>www/plugins/cordova-plugin-network-information/www/Connection.js</key>
 		<data>
 		eFkXRtFkv02NAgFnyI+/4nqBHjM=
@@ -715,6 +951,10 @@
 		<key>www/splash.png</key>
 		<data>
 		NzclTnxHNf7y0zdMC8yEoxZbOvk=
+		</data>
+		<key>www/test.xlsx</key>
+		<data>
+		QKrt6YO/Jefn1d53KE+2V3cF6y0=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -976,22 +1216,305 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+GIJFSy6mcD3/mrXLyx2g6deqHs=
+			BdgQZ2tXJN4gmeKhTWakwt/CtGM=
 			</data>
 			<key>hash2</key>
 			<data>
-			C4970xfqb77x5rbdoOvMY+UXejdl3BcEO1foPq3/ndg=
+			i4A6zmbCVAmDPHCUvCw1cbvOK4/r/EZXDyBlKk9RhGc=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/controls_bg.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			xIN1nlKT1Cv/7P0RRRjRiqDmgcM=
+			</data>
+			<key>hash2</key>
+			<data>
+			pzhElGcS59QZoMzcxLzZ3ihChcpx1dKisEKTO9L+gU8=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/controls_bg@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/JjoVIaovIBao+GcSbUR+J/uH80=
+			</data>
+			<key>hash2</key>
+			<data>
+			yX0ZEoukaqa6a/G1ITsB+M1bxBo8kEZpwe5CaFLe5Qo=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/controls_bg@2x~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WAxs/wl5r3Vdmfe+LEOoC35D3kw=
+			</data>
+			<key>hash2</key>
+			<data>
+			P/0WElEccH2B87gz99GH+YKowhYCuk+kDoyGpOMI4B8=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/controls_bg~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			dXhIxrANYjO4ggr9DvL4LugtNtw=
+			</data>
+			<key>hash2</key>
+			<data>
+			QdnuiJAoK3KNyeZbkuIME7+vtc8YwT4Z9ZFNBaLaCOc=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/de.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6I3SFoWWUS6apP/Bme40Jk3hVOo=
+			</data>
+			<key>hash2</key>
+			<data>
+			12OwJvdzV69Rz/HjgNu0z1i4Q4Tkd+mA/5s2/W+84sE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>CDVCapture.bundle/en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			CeYtR15hSvjyb4M2WE1Jff1QqiE=
+			</data>
+			<key>hash2</key>
+			<data>
+			QzTKMCoK8jYV/wgVMhyVe2ZYcwl9FivIjXfsltW4bGs=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>CDVCapture.bundle/es.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			7nM4Esa6Sb4xFrW0Yaq3LAoki0k=
+			</data>
+			<key>hash2</key>
+			<data>
+			Pkr9skNzDkim9JDW/qdSnZd8FBa6MCF+MG44DT8Jjvs=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>CDVCapture.bundle/microphone-568h@2x~iphone.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			KFv6FATezeZlzYYkfkMd8cELKyk=
+			</data>
+			<key>hash2</key>
+			<data>
+			+LtqEOvbRurYmhDXrOVgMkCT9d4spaoWYgX99H38rjk=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/microphone.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			EB4Z4Ucd46Fq5XyJ7XtU0vIKQDE=
+			</data>
+			<key>hash2</key>
+			<data>
+			ki7J7fDU22iRmn3MLvJASDo9qhK/AVkC/0FMlcbYsPk=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/microphone@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			8wPpeqT7rFRPwKnLKeNLp3XDTvs=
+			</data>
+			<key>hash2</key>
+			<data>
+			LUN6VoFWPx9Pj4AgzMbdZ/FVdBCyh628NudODtDTM2E=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/microphone@2x~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			IIs7cGjL1SwLOj/hgHjz6FAmb1g=
+			</data>
+			<key>hash2</key>
+			<data>
+			BL1a49ZOXQuHtyGvMmShZ260hF4B86Pd5v7Foc4ERUg=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/microphone~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			zHKiKteWSwFDKqF6l4RiZSnib1A=
+			</data>
+			<key>hash2</key>
+			<data>
+			xngVoWed8n+QO2TwhqYFFYIbe4jDviXhzPvEwAsyJF8=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/record_button.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			PbKFvkKJyr/3l1jB+RtSp4xcbJ4=
+			</data>
+			<key>hash2</key>
+			<data>
+			KWr4CRSCdktogWF9dvF46TFeWgOsvJ/rZaHw+BWofEk=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/record_button@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			c5mCMIk/dVEzWqpx5bhd7/+ShUw=
+			</data>
+			<key>hash2</key>
+			<data>
+			is/Sms3nhyPHnpBZdR5aIRuVNv1aJ9BEkeSF0pT9vMo=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/record_button@2x~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			63F6LZKIHrJuNCXGXZuIt0A5kv8=
+			</data>
+			<key>hash2</key>
+			<data>
+			KA8XBZgqeUvq+ticlsoDYwlDs+JCBVtTW1XVJcXgvkA=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/record_button~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			HC/YPukmDtEt6OAQYxLdkxNyc7Y=
+			</data>
+			<key>hash2</key>
+			<data>
+			s69IhqmtGqtKhbO+zCmVwfzxtHop/aPrC+O/TOmzBbQ=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/recording_bg.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ZNagG9STNHWMhmxadGoaHtc+uI8=
+			</data>
+			<key>hash2</key>
+			<data>
+			lzRurVkKJFoDA6Or39Dhgb/ZeoXy/l6XoF6hI7kND/4=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/recording_bg@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			iKckW54kjD4zsIDtHGJsxQzF1Wg=
+			</data>
+			<key>hash2</key>
+			<data>
+			SijySQhe7KwkzHMo/PeJTfTuMNcq+qaP/jCSjv8LBD4=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/recording_bg@2x~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			eWYnNM5t90TEdIlwhn+mO1uV0+w=
+			</data>
+			<key>hash2</key>
+			<data>
+			C/roseZ5BPwJEoZ0ZREYjcQB1Zn49XNiXDKrxHeysw0=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/recording_bg~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jk3QF8bqLIAYUFuhEngOexBI0g0=
+			</data>
+			<key>hash2</key>
+			<data>
+			WM7H14n1RGxB9PjFI/u87fwOAC62nS7sqlNuy4ZblEc=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/se.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			I5I3LPH+OWZTsU4WPRv8Nc7P3uE=
+			</data>
+			<key>hash2</key>
+			<data>
+			D1lCMCWWYXSKLCXmaCzQbL9U0I9Bplo56efc+rNcN3g=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>CDVCapture.bundle/stop_button.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			1FeOIJC/ST8sLCXJcX1kRHrdfrg=
+			</data>
+			<key>hash2</key>
+			<data>
+			rl+Jx8iU67+OIy/Sg1GxugV0qXBSDZEfcuqYSFVnmS4=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/stop_button@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			oPThgxKhZvW3158u1HLALLJKPeU=
+			</data>
+			<key>hash2</key>
+			<data>
+			Jkk+ZDLN1HawV0A2tZ7dnbKs4BerHJFp+VR6lPEqWOc=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/stop_button@2x~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			tKI2Zkc7WAHZgX8uywAdRZ2zCtw=
+			</data>
+			<key>hash2</key>
+			<data>
+			T4vzQNcm9vtuLl7MulXCR5dtEq47OB5opMkLIwHmVZY=
+			</data>
+		</dict>
+		<key>CDVCapture.bundle/stop_button~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			BwsYSepAdB0lzFaojBFNr2yMphI=
+			</data>
+			<key>hash2</key>
+			<data>
+			ujMJLFyrE0b4sIn4ZlGGwsltI/9/hQjBy1IUfEq58Y8=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1Dug+MzbIH0BbP8H4DgPjbaTtKY=
+			NploA3qh+YdxpRLS0v3OLoe25eg=
 			</data>
 			<key>hash2</key>
 			<data>
-			CJMMFsTZL0VzFmyrUjHVC2KMMcGZYDgf1eQVkptFIYA=
+			EKuTuXWh8+MN6rPk3wfSCUUyVL3uItO5qyr/aYIPI14=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -1009,11 +1532,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9NLGGRLU1ztff9m8PMX3Fd47KZ8=
+			6qweJFyqImRgYl9PXaYubdhAf+A=
 			</data>
 			<key>hash2</key>
 			<data>
-			8T2lntzo7VfviN5d85a2NWoyVRIk9yLao800NGkvTRA=
+			RvK1H30EzN5AC7EEprKCyFWyV50LPhU6zUtp4YKkrGo=
 			</data>
 		</dict>
 		<key>CDVNotification.bundle/beep.wav</key>
@@ -1031,33 +1554,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XJ/iXsEU1gjwOfwVJl2HnqTgA5c=
+			PgTUEORtGL0dK4ysqrebiLP+yYE=
 			</data>
 			<key>hash2</key>
 			<data>
-			qqhs6XTEuiB8tvM894jXX1NUFx6R8EBX52Kpxvosz6M=
+			aCXmqRUGhagWAFHAo4K6xRYWpMnYV8xTJE0oneTYz5o=
 			</data>
 		</dict>
 		<key>config.xml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FAoydNPSBDxTl/7exWx/sEpj208=
+			x6Lh5pNA39tmqp8//PERmP0A6/A=
 			</data>
 			<key>hash2</key>
 			<data>
-			LDfReAZTiEpJDdw0Y55uJBkm4kqtqJw8H2T1M1o7TU8=
+			w83G0Qyzsem6kEZjzh36QS2AW9pfo3lv2U98kNGXqUE=
 			</data>
 		</dict>
 		<key>embedded.mobileprovision</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			turBNf7AF1iG+jzYOqpjv/mCqho=
+			p+wziztzQXSQk9KOAM+P0X4vnIE=
 			</data>
 			<key>hash2</key>
 			<data>
-			kZQ6eeWJlE43KlLVGBjekPtJx1C5aZReVHMYnUtt3gE=
+			uIS5B/cVEvRLur/xvhmSbreJv6/5DtLszOSRvVGD0uw=
 			</data>
 		</dict>
 		<key>www/archive/appstoreicon.png</key>
@@ -1102,6 +1625,17 @@
 			<key>hash2</key>
 			<data>
 			+Se3pQecfjhRAdHWYAIQceD/CiXcD8AG9cFsZiNjy2M=
+			</data>
+		</dict>
+		<key>www/backend.php</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			uXj7A6LyJc9yyKMuFVPOBsQgpOI=
+			</data>
+			<key>hash2</key>
+			<data>
+			svrFxAyc9CWq96Kr+KpjdoXy+hqY2WCt2gz5xAlVSWI=
 			</data>
 		</dict>
 		<key>www/cordova-js-src/exec.js</key>
@@ -1163,11 +1697,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DpbZyyBvNJVv73ckb0IY1Byy0G0=
+			27o3rAl5pLh2o4I82dI+SxfvbuA=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZVFI9zd85wYzi01sNHopAT5O4FgSLblm5vn6EYM9TC0=
+			CeJ/+ZSs9inG8GKqYWxBjxNHNI7/hl5qsAN8IP4KeOk=
 			</data>
 		</dict>
 		<key>www/css/bootstrap-material-design-0.3.0/css/material-fullpalette.min.css</key>
@@ -1999,22 +2533,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			F+FRaQKJWheCNhv9mMcfELIRpK0=
+			eF1yyKTqPTAsbdCSDDXO2KhcUOQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			b5p93vU6hwt9ypENNlfpzA0SiNJJkLT47IC5U2x+nWk=
+			4Qf131NYl7rUNr8VCApFak/a4ORduDN/tbn6ElnIJjs=
+			</data>
+		</dict>
+		<key>www/js/FileSaver.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ppV+tNTWNc2klmEzFicm/vyFuQM=
+			</data>
+			<key>hash2</key>
+			<data>
+			htuR1Owx8i9hm4h4Y4d/FjlPLoj2teQmhJ5WnNSo3w0=
+			</data>
+		</dict>
+		<key>www/js/LICENSE</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Gp6FoKWG33mtGtgNsppJAM+bxsM=
+			</data>
+			<key>hash2</key>
+			<data>
+			VeD40QgzsEI9z9BCQ0CUZv4PrYsKRh83BTyJeCfJ83s=
 			</data>
 		</dict>
 		<key>www/js/app.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FJ61Z0JGRoU5dsiYgtUQeGrFZA0=
+			dGNfnhcpl+engaPhKbiSBmkolVg=
 			</data>
 			<key>hash2</key>
 			<data>
-			uDz9SNPKS4u06DLdE3HKDWkd4C+t0aJSf0vgZEwXA4M=
+			wW8sKVREqOlUcs8QAVqVyB9P2hFmdsL/83dchIDx8CM=
+			</data>
+		</dict>
+		<key>www/js/cpexcel.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			NEFM9gb1skGdfZjplvkoNW5rSTA=
+			</data>
+			<key>hash2</key>
+			<data>
+			W3rJZOZXlV1xks8sdGPOTRzqRS3Z09PwehXSQXEq0gU=
 			</data>
 		</dict>
 		<key>www/js/date.js</key>
@@ -2026,6 +2593,17 @@
 			<key>hash2</key>
 			<data>
 			cb92bJJyZ+FBAZoDvArULVHBlkjEE52hh0HzXianXQg=
+			</data>
+		</dict>
+		<key>www/js/index.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			bSSCg0AVTLcqwPYSaEnpSKUwN/I=
+			</data>
+			<key>hash2</key>
+			<data>
+			mLanBXJpzRx9HJ9RJu0bROep/t8YQZ0/D/O01PmG59c=
 			</data>
 		</dict>
 		<key>www/js/jquery.js</key>
@@ -2050,6 +2628,17 @@
 			1PYCpx/EXA36KN1NKrK7auaTylVyk01D98R7Ccf04Bc=
 			</data>
 		</dict>
+		<key>www/js/jszip.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			R5XhQR6JofOhYoYlFHk5Qj9Vgrc=
+			</data>
+			<key>hash2</key>
+			<data>
+			T6Npk+Bn5Fz/MpPIEuOXz/xd8qvsNaYWOh+GQlmuFGs=
+			</data>
+		</dict>
 		<key>www/js/moment.js</key>
 		<dict>
 			<key>hash</key>
@@ -2061,6 +2650,116 @@
 			tvVzNkUbIQdgLa2e8r+IVtkDV8nZu3DQBqy/CXaH0+Q=
 			</data>
 		</dict>
+		<key>www/js/shim.min.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Z7IllA0NQSPoxrSE6c9Sl7PgwjA=
+			</data>
+			<key>hash2</key>
+			<data>
+			DBYJGUfCjsFT4oHNMD2LOGe9HZZGB69q1PJkzNnlEuc=
+			</data>
+		</dict>
+		<key>www/js/xlsx.core.min.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6y/wLLvwHJ4HeZy9/+TlEVN4ZZ8=
+			</data>
+			<key>hash2</key>
+			<data>
+			iwlRI1haITOzNPKzQ7KEn4dB1BVVNuK4rsk4Rm1CAlo=
+			</data>
+		</dict>
+		<key>www/js/xlsx.core.min.map</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Lwy/7W63bibsFdjv7mc4SWuutFs=
+			</data>
+			<key>hash2</key>
+			<data>
+			i9JUeihsSUHkQje2Dry6K9ATotEkH2qcIKEby/izEwc=
+			</data>
+		</dict>
+		<key>www/js/xlsx.extendscript.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			aHHo13GmeOH/l3IourTuxhQTWPg=
+			</data>
+			<key>hash2</key>
+			<data>
+			AF7CDK1YvhwIZH8nZMMm8OJADsZuhwLPynkKcC7mkac=
+			</data>
+		</dict>
+		<key>www/js/xlsx.full.min.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			vgVmBN3TvoFbxJlcIQ1IR0OPUpU=
+			</data>
+			<key>hash2</key>
+			<data>
+			ntJErg+K+LNj/0MHOzf19wzVIs0ZKD9zH5gcZUI7y/8=
+			</data>
+		</dict>
+		<key>www/js/xlsx.full.min.map</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2nqvjZ+uLBX1D1rrLg1P8sj2bK0=
+			</data>
+			<key>hash2</key>
+			<data>
+			pnhHhMVVAPiwn6FAvtjKinwXFToQ5WONb0eSpR/XxJI=
+			</data>
+		</dict>
+		<key>www/js/xlsx.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			X0FLH5d/OfzVFVXlp88CUJKX2w0=
+			</data>
+			<key>hash2</key>
+			<data>
+			rccWytpU3/FGDrSh8z6p2pQlkDiTZWYOiv+HZp6Ydc0=
+			</data>
+		</dict>
+		<key>www/js/xlsx.min.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/bnrIfXYAYNKqnKRr+gE7oW8BNo=
+			</data>
+			<key>hash2</key>
+			<data>
+			8ZNob8gR7NCUfStX6wgKvOFRuJ306qY7CdeoaQN89wk=
+			</data>
+		</dict>
+		<key>www/js/xlsx.min.map</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			UyfQsQ8/5AUqQ1nvknXgqmWQtec=
+			</data>
+			<key>hash2</key>
+			<data>
+			v0Au+In0MjMtgUwR/4Wx3/9dVZ7jyqtdKpYMe4QPuKQ=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-badge/www/badge.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			h//6K1YQS+L8Z1BtpfkSQVUFodI=
+			</data>
+			<key>hash2</key>
+			<data>
+			cqOKJ7Pz5OwV9Lm8SicYvP30MS3yfAz+qsKFTny/sPA=
+			</data>
+		</dict>
 		<key>www/plugins/cordova-plugin-battery-status/www/battery.js</key>
 		<dict>
 			<key>hash</key>
@@ -2070,6 +2769,17 @@
 			<key>hash2</key>
 			<data>
 			GlMFJkb2RoiicZ4UF9WCIXW+LRMrN7e8R0cPFZ8qe+4=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-bluetoothle/www/bluetoothle.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			p8NZWwFmDaxBbXiWmLpLJRf4Dz8=
+			</data>
+			<key>hash2</key>
+			<data>
+			vZgZHwgGlsnOAkbYF611bZuky3r0wHVwXX8cV4w5waM=
 			</data>
 		</dict>
 		<key>www/plugins/cordova-plugin-calendar/www/Calendar.js</key>
@@ -2290,6 +3000,17 @@
 			<key>hash2</key>
 			<data>
 			ZpkNPv+AN7f0Ae8bkP57HasUBotYypCxZai0eF3Fh3I=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-file-opener2/www/plugins.FileOpener2.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9WQsEVQP618XAhkiRHsGTgZx+4g=
+			</data>
+			<key>hash2</key>
+			<data>
+			eifu4xle61W9CGbE39O7IoaP+phv1qPhBZbYOqI5OrE=
 			</data>
 		</dict>
 		<key>www/plugins/cordova-plugin-file/www/DirectoryEntry.js</key>
@@ -2611,6 +3332,127 @@
 			LH616NInoTGsLm08b+xNm2OoU6MIFh6azxQgcTTXDA4=
 			</data>
 		</dict>
+		<key>www/plugins/cordova-plugin-local-notification/www/local-notification-core.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			4k5ZzQslIyHPtcOkmMxtcjxwx0c=
+			</data>
+			<key>hash2</key>
+			<data>
+			vWHQ/U3Aifp7x1gqYW1287WN6wcd5I2gilvTNH12Pw8=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-local-notification/www/local-notification-util.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			J4cY9RDN5aqfCGJ/Lla6+xbdRFs=
+			</data>
+			<key>hash2</key>
+			<data>
+			I7NguRy45grv8Pvw1J1j7tsTCLFOq9QTR6LD/fGln/Y=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-local-notification/www/local-notification.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			cyVZFACG6w+OVT9N1qHwLhY8oPk=
+			</data>
+			<key>hash2</key>
+			<data>
+			2cqviDmZpoatFWUdW69pk+SXwIuvfnNH+6T5suKRsfg=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-media-capture/www/CaptureAudioOptions.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jRm1E5d1rODQg5wNlYUYJZt/4Q8=
+			</data>
+			<key>hash2</key>
+			<data>
+			hMMIqJ7Fdf41Jx1Ohi3mnTm6RKTolOVTH3FZxGGFkvk=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-media-capture/www/CaptureError.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			JdLwzFcUGeJZlwc8tWMfkVN6t9Y=
+			</data>
+			<key>hash2</key>
+			<data>
+			7k0jAufwyoEzXrScmk9jXYcOIQkgImn/mrEYPnHr/fQ=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-media-capture/www/CaptureImageOptions.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WOAv5J7Ku811T0EC1hkqrRkenwk=
+			</data>
+			<key>hash2</key>
+			<data>
+			y1L5yjCzIZthgn8eJpnVrjA+0/2mpv8zH3tVHYDwMMc=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-media-capture/www/CaptureVideoOptions.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			YPkl4ysH6fGpBtTbiHcyS6IriRQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			DoW1DxCAmJ8kl6CrP1zJmnBI5yFzCpc+HTYrJlRSIPo=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-media-capture/www/MediaFile.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ybPGRco63FAwXdFAgH6Bs25wbs0=
+			</data>
+			<key>hash2</key>
+			<data>
+			TIpib55ynhF706NTPmHvGHfUlX0+xXbi0HAO8PZ2JmE=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-media-capture/www/MediaFileData.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Xamso7OW8YqTjw8yKwQYfcN1OCw=
+			</data>
+			<key>hash2</key>
+			<data>
+			kWYK42H6Q5yK878OTYevaAiAWi7d9wtlUDmr0+93xP0=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-media-capture/www/capture.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			yEa+ZuJp+q36qRqMIjpSYokX9OA=
+			</data>
+			<key>hash2</key>
+			<data>
+			2ALWChg3HF90P4tqTD01oKuyKAF8bb9EXgr1hTy0s64=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-media-capture/www/helpers.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			HMmroA/+GSI+y81p4FJeTSivJPw=
+			</data>
+			<key>hash2</key>
+			<data>
+			pJQMWFlJJSQNQh1Ma8YEMugNAdXNLGdD2H0Q3yCx2hA=
+			</data>
+		</dict>
 		<key>www/plugins/cordova-plugin-network-information/www/Connection.js</key>
 		<dict>
 			<key>hash</key>
@@ -2653,6 +3495,17 @@
 			<key>hash2</key>
 			<data>
 			VlCyCj8lJHOT6OdZh+1FcrI9EphoByRP0zarQVGz4RQ=
+			</data>
+		</dict>
+		<key>www/test.xlsx</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			QKrt6YO/Jefn1d53KE+2V3cF6y0=
+			</data>
+			<key>hash2</key>
+			<data>
+			IYFIO32vKxyyn16Px5FxVzKlQNJB4ESIenuqB1zCBfY=
 			</data>
 		</dict>
 	</dict>

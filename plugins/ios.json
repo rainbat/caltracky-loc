@@ -7,7 +7,13 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-background-mode-bluetooth-central": {
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
+    },
     "cordova-plugin-battery-status": {
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
+    },
+    "cordova-plugin-bluetoothle": {
       "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
     "cordova-plugin-calendar": {
@@ -35,6 +41,9 @@
     "cordova-plugin-file": {
       "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
+    "cordova-plugin-file-opener2": {
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
+    },
     "cordova-plugin-geolocation": {
       "GEOLOCATION_USAGE_DESCRIPTION": " ",
       "PACKAGE_NAME": "ch.rainbat.caltracky"
@@ -45,14 +54,26 @@
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
+    },
     "cordova-plugin-network-information": {
       "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
     "cordova-plugin-vibration": {
       "PACKAGE_NAME": "ch.rainbat.caltracky"
+    },
+    "cordova-plugin-media-capture": {
+      "CAMERA_USAGE_DESCRIPTION": " ",
+      "MICROPHONE_USAGE_DESCRIPTION": " ",
+      "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     }
   },
   "dependent_plugins": {
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
+    },
     "cordova-plugin-compat": {
       "PACKAGE_NAME": "ch.rainbat.caltracky"
     }

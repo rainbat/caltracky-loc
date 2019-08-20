@@ -21,6 +21,11 @@
 <script src="js/date.js"></script>
 <script src="js/moment.js"></script>
 
+<script src="js/shim.min.js"></script>
+<script src="js/xlsx.full.min.js"></script>
+
+<script src="js/index.js"></script>
+<script src="js/FileSaver.js"></script>
 
 <script type="text/javascript">
 	$(document).on('mobileinit', function(){
@@ -44,7 +49,7 @@
 	<div role="main" class="ui-content">
 		<a class="ui-btn" id="today">Sync Today</a>
 		<center><div id="cards"></div></center>
-		<a href="#settings" class="ui-btn">Settings</a>
+		<a href="#settings" class="ui-btn">...</a>
 		<script>
 
 			$('#today').on('click', function () {
@@ -64,7 +69,7 @@
 			     );
 
 				if( calOptionsIdWork == "" || calOptionsIdTrack == ""){
-					$("#cards").append("<b>Calendars Work and Track not found.</b>");
+					$("#cards").append("<b>Calendars with Name <i>Work</i> and <i>Track</i> not found. <br/>Please add them manually !</b>");
 				}
 
 				var calOptions = window.plugins.calendar.getCalendarOptions();
@@ -84,8 +89,10 @@
 
 			     	function (msg) {
 
-					    log('Calendar success: ' );
+					    log('Calendar Work and Track found.' );
 						
+						showStatus( 'Calendar Work and Track found' );
+
 						$("#cards").empty();
 
 					    msg.forEach(function(entry) {
@@ -166,7 +173,7 @@
 	</div><!-- /content -->
 
 	<div data-role="footer" data-position="fixed">
-		<h4>Page Footer</h4>
+		<h4><div id="footer1"></div></h4>
 	</div><!-- /footer -->
 </div><!-- /page -->
 
@@ -235,7 +242,7 @@
 	</div><!-- /content -->
 
 	<div data-role="footer" data-position="fixed">
-		<h4>Page Footer</h4>
+		<h4><div id="footer2"></div></h4>
 	</div><!-- /footer -->
 </div><!-- /page -->
 
@@ -254,9 +261,7 @@
 		
 		<br/>
 		<a class="ui-btn" id="options">Sync Options</a>
-		<a class="ui-btn" id="updateLog">updateLog</a>
-		<div id="log" class="ui-shadow ui-listview-inset"></div>
-		<div id="track" class="ui-shadow ui-listview-inset"></div>
+
 		<br/>
 		<a class="ui-btn" id="create">createEventNowStart</a>
 		<a class="ui-btn" id="update">updateEventNowToEnd</a>
@@ -268,6 +273,18 @@
 		<a class="ui-btn" id="createFile">createFile</a>
 		<a class="ui-btn" id="readFile">readFile</a>
 		<a class="ui-btn" id="sendFile">sendFile</a>
+
+		<br/>
+		<a class="ui-btn" id="createExcelFile">createExcelFile</a>
+		<a class="ui-btn" id="createWordFile">createWordFile</a>
+		<a class="ui-btn" id="createHTMLFile">createHTMLFile</a>
+		
+		<br/>
+		<a class="ui-btn" id="updateLog">empty Log</a>
+		<div id="log" class="ui-shadow ui-listview-inset"></div>
+		<div id="track" class="ui-shadow ui-listview-inset"></div>
+		
+		
 		
 	</div><!-- /content -->
 
@@ -338,6 +355,8 @@
 		});
 		
 		$('#updateLog').on('click', function () {
+
+			tmp = [];
 
 			$("#log").empty();    
 
@@ -477,7 +496,19 @@
 				      'Heading: '           + position.coords.heading           + '\n' +
 				      'Speed: '             + position.coords.speed             + '\n' +
 				      'Timestamp: '         + position.timestamp                + '\n');*/
+				
 				log( "moving with :" + position.coords.speed );
+				
+				//if( position.coords.speed > -1 ){
+				
+				  cordova.plugins.notification.local.schedule({
+					    title: 'Sync in progress',
+					    text: 'Copied 2 of 10 files',
+					    progressBar: { value: 20 }
+				  });
+				
+				//}
+
 			}
 
 			// onError Callback receives a PositionError object
@@ -489,9 +520,8 @@
 
 			// Options: throw an error if no update is received every 30 seconds.
 			//
-			var watchID = window.navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });
-			var watchID = window.navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });
-		
+			var watchID = window.navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 240000, frequency: 1000 });
+			
 		});
 
 		$('#clearWatchPosition').on('click', function () {
@@ -572,10 +602,7 @@
 						log("Storing tmpFile Path :" + fileEntry.nativeURL);
 					        
 						fileEntry.file(function (file) {
-					    	
-							
-
-
+					    								
 					        var reader = new FileReader();
 
 					        reader.onloadend = function() {
@@ -609,14 +636,279 @@
 				attachments: tmpFile
 			}, 
 			function( msg ){
-				log("mail sent");
+				log("mail sent" + tmpFile);
 			}, this);
 		});
+
+		$('#createWordFile').on('click', function () {
+
+			//window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+			window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, function (fs) {
+
+				log('file system open: ' + fs.name);
+				fs.root.getFile("winword.docx", { 
+					create: true, 
+					exclusive: false 
+					}, 
+					function (fileEntry) {
+						tmpFile = fileEntry.toURL();
+
+						log("fileEntry is file " + fileEntry.isFile.toString());
+						log("Storing tmpFile Path :" + fileEntry.nativeURL);
+						log("Storing tmpFile Path :" + fileEntry.toURL() );
+
+						// https://github.com/dolanmiu/docx
+						const doc = new Document();
+
+			            const paragraph = new Paragraph("Hello World");
+			            const institutionText = new TextRun("Foo Bar").bold();
+			            const dateText = new TextRun("Github is the best").tab().bold();
+			            paragraph.addRun(institutionText);
+			            paragraph.addRun(dateText);
+
+			            doc.addParagraph(paragraph);
+
+			            const packer = new Packer();
+			            
+			            var buffer64;
+			            var blob;
+			            packer.toBase64String(doc).then(blob => {
+			                //saveAs(blob, "winword.docx");
+			            	buffer64 = blob;   
+			            	console.log( "the buffer is " + buffer64 ); 
+			            	blob = b64toBlob(buffer64,"application/vnd.openxmlformats-officedocument.wordprocessingml.document",512);
+			            	console.log( "the blob is: " + blob );
+
+							fileEntry.createWriter(function (fileWriter) {
+
+								fileWriter.write( blob );
+
+								fileWriter.onwriteend = function() {
+						            
+						            console.log("Successful file write...");
+						    
+						            cordova.plugins.fileOpener2.open(
+						                tmpFile,
+						                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+						                {
+						                    error: function (e) {
+						                        console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
+						                    },
+						                    success: function () {
+						                        console.log('file opened successfully');
+						                    }
+					                	}
+					                );
+
+						        };
+
+						        fileWriter.onerror = function (e) {
+						            console.log("Failed file write: " + e.toString());
+						        };
+
+						    });
+
+			            });
+
+						
+
+
+						/*cordova.plugins.email.open({
+						    to:          Array("info@rainbat.ch"), // email addresses for TO field
+						    subject:    "test", // subject of the email
+						    body:       "test", // email body (for HTML, set isHtml to true)
+						    isHtml:    true, // indicats if the body is HTML or plain text
+							attachments: "base64:test.xlsx//" + buffer64
+						}, 
+						function( msg ){
+							log("mail sent");
+						}, this);*/
+						
+					});
+
+				});
+		});
+
+		$('#createHTMLFile').on('click', function () {
+
+			//window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+			window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, function (fs) {
+
+				log('file system open: ' + fs.name);
+				fs.root.getFile("html.html", { 
+					create: true, 
+					exclusive: false 
+					}, 
+					function (fileEntry) {
+						tmpFile = fileEntry.toURL();
+
+						log("fileEntry is file " + fileEntry.isFile.toString());
+						log("Storing tmpFile Path :" + fileEntry.nativeURL);
+						log("Storing tmpFile Path :" + fileEntry.toURL() );
+
+						var blob = "";
+
+						blob += "<html>";
+						blob += "<head>";
+						blob += "  <title>Hello Title</title>";
+						blob += "</head>";
+						blob += "  <table>";
+						blob += "    <tr><td>A</td><td>B</td></tr>";
+						blob += "    <tr><td>C</td><td>D</td></tr>";
+						blob += "    <tr><td>F</td><td>E</td></tr>";
+						blob += "  </table>";
+						blob += "</html>";
+						
+
+						fileEntry.createWriter(function (fileWriter) {
+
+							fileWriter.write( blob );
+
+							fileWriter.onwriteend = function() {
+					            
+					            console.log("Successful file write...");
+					    
+					            cordova.plugins.fileOpener2.open(
+					                tmpFile,
+					                'text/html',
+					                {
+					                    error: function (e) {
+					                        console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
+					                    },
+					                    success: function () {
+					                        console.log('file opened successfully');
+					                    }
+				                	}
+				                );
+
+					        };
+
+					        fileWriter.onerror = function (e) {
+					            console.log("Failed file write: " + e.toString());
+					        };
+
+					    });
+						
+						/*cordova.plugins.email.open({
+						    to:          Array("info@rainbat.ch"), // email addresses for TO field
+						    subject:    "test", // subject of the email
+						    body:       "test", // email body (for HTML, set isHtml to true)
+						    isHtml:    true, // indicats if the body is HTML or plain text
+							attachments: "base64:test.xlsx//" + buffer64
+						}, 
+						function( msg ){
+							log("mail sent");
+						}, this);*/
+						
+					});
+
+				});
+		});
+
+		$('#createExcelFile').on('click', function () {
+
+			//window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+			window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, function (fs) {
+
+				log('file system open: ' + fs.name);
+				fs.root.getFile("excel.xlsx", { 
+					create: true, 
+					exclusive: false 
+					}, 
+					function (fileEntry) {
+
+						log("fileEntry is file " + fileEntry.isFile.toString());
+						log("Storing tmpFile Path :" + fileEntry.nativeURL);
+						log("Storing tmpFile Path :" + fileEntry.toURL() );
+						
+						var wb = XLSX.utils.book_new();
+
+						/* convert table 'table1' to worksheet named "Sheet1" */
+						var ws_data = [
+  							[ "S", "h", "e", "e", "t", "J", "S" ],
+  							[  1 ,  2 ,  3 ,  4 ,  5 , 6 , 7 ]
+						];
+						var ws = XLSX.utils.aoa_to_sheet(ws_data);
+						XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+
+						tmpFile = fileEntry.toURL();
+						// file:///var/mobile/Containers/Data/Application/3D478245-0410-4B02-8387-ABAEBFD07DD2/tmp/tmp.xlsx
+						//console.log( wb );
+						//XLSX.writeFile(wb, tmpFile, {replace:true, type:"base64"} );
+						const wopts = {type: 'buffer', bookType: 'xlsx'};
+						var buffer = XLSX.write( wb, wopts ); 
+						var buffer64 = btoa( buffer );
+						//console.log( buffer64 );
+						//console.log( buffer );
+						fileEntry.createWriter(function (fileWriter) {
+
+							fileWriter.onwriteend = function() {
+					            log("Successful file write...");
+					    
+					            cordova.plugins.fileOpener2.open(
+					                tmpFile,
+					                'application/vnd.ms-excel',
+					                {
+					                    error: function (e) {
+					                        console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
+					                    },
+					                    success: function () {
+					                        console.log('file opened successfully');
+					                    }
+				                	}
+				                );
+
+					        };
+
+					        fileWriter.onerror = function (e) {
+					            log("Failed file write: " + e.toString());
+					        };
+							//var blob = new Blob( [buffer], {type: "application/vnd.ms-excel"});
+							var blob = b64toBlob(buffer64,"application/vnd.ms-excel",512);
+							fileWriter.write( blob );
+							//window.open(tmpFile, '_system');
+
+					    });
+
+						/*cordova.plugins.email.open({
+						    to:          Array("info@rainbat.ch"), // email addresses for TO field
+						    subject:    "test", // subject of the email
+						    body:       "test", // email body (for HTML, set isHtml to true)
+						    isHtml:    true, // indicats if the body is HTML or plain text
+							attachments: "base64:test.xlsx//" + buffer64
+						}, 
+						function( msg ){
+							log("mail sent");
+						}, this);*/
+
+						
+					});
+
+				});
+		});
+
+		function b64toBlob(b64Data, contentType, sliceSize) {
+		    contentType = contentType || '';
+		    sliceSize = sliceSize || 512;
+		    var byteCharacters = atob(b64Data);
+		    var byteArrays = [];
+		    for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+		        var slice = byteCharacters.slice(offset, offset + sliceSize);
+		        var byteNumbers = new Array(slice.length);
+		        for (var i = 0; i < slice.length; i++) {
+		            byteNumbers[i] = slice.charCodeAt(i);
+		        }
+		        var byteArray = new Uint8Array(byteNumbers);
+		        byteArrays.push(byteArray);
+		    }
+		    var blob = new Blob(byteArrays, { type: contentType });
+		    return blob;
+		}
 
 	</script>
 
 	<div data-role="footer" data-position="fixed">
-		<h4>Page Footer</h4>
+		<h4><div id="footer5"></div></h4>
 	</div><!-- /footer -->
 </div><!-- /page -->
 

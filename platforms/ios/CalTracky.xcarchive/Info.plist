@@ -9,9 +9,9 @@
 		<key>CFBundleIdentifier</key>
 		<string>ch.rainbat.caltracky</string>
 		<key>CFBundleShortVersionString</key>
-		<string>1.0.28</string>
+		<string>1.0.30</string>
 		<key>CFBundleVersion</key>
-		<string>1.0.28</string>
+		<string>1.0.30</string>
 		<key>SigningIdentity</key>
 		<string>iPhone Developer: Dominique Dümmler (53UHUMF5GZ)</string>
 		<key>Team</key>
@@ -20,7 +20,7 @@
 	<key>ArchiveVersion</key>
 	<integer>2</integer>
 	<key>CreationDate</key>
-	<date>2019-07-19T10:51:13Z</date>
+	<date>2019-08-20T14:45:01Z</date>
 	<key>Name</key>
 	<string>CalTracky</string>
 	<key>SchemeName</key>

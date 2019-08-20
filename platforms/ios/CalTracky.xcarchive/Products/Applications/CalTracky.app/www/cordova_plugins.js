@@ -1,11 +1,35 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
   {
+    "id": "cordova-plugin-device.device",
+    "file": "plugins/cordova-plugin-device/www/device.js",
+    "pluginId": "cordova-plugin-device",
+    "clobbers": [
+      "device"
+    ]
+  },
+  {
+    "id": "cordova-plugin-badge.Badge",
+    "file": "plugins/cordova-plugin-badge/www/badge.js",
+    "pluginId": "cordova-plugin-badge",
+    "clobbers": [
+      "cordova.plugins.notification.badge"
+    ]
+  },
+  {
     "id": "cordova-plugin-battery-status.battery",
     "file": "plugins/cordova-plugin-battery-status/www/battery.js",
     "pluginId": "cordova-plugin-battery-status",
     "clobbers": [
       "navigator.battery"
+    ]
+  },
+  {
+    "id": "cordova-plugin-bluetoothle.BluetoothLe",
+    "file": "plugins/cordova-plugin-bluetoothle/www/bluetoothle.js",
+    "pluginId": "cordova-plugin-bluetoothle",
+    "clobbers": [
+      "window.bluetoothle"
     ]
   },
   {
@@ -139,14 +163,6 @@ module.exports = [
     "pluginId": "cordova-plugin-contacts",
     "merges": [
       "Contact"
-    ]
-  },
-  {
-    "id": "cordova-plugin-device.device",
-    "file": "plugins/cordova-plugin-device/www/device.js",
-    "pluginId": "cordova-plugin-device",
-    "clobbers": [
-      "device"
     ]
   },
   {
@@ -340,6 +356,14 @@ module.exports = [
     "runs": true
   },
   {
+    "id": "cordova-plugin-file-opener2.FileOpener2",
+    "file": "plugins/cordova-plugin-file-opener2/www/plugins.FileOpener2.js",
+    "pluginId": "cordova-plugin-file-opener2",
+    "clobbers": [
+      "cordova.plugins.fileOpener2"
+    ]
+  },
+  {
     "id": "cordova-plugin-geolocation.Coordinates",
     "file": "plugins/cordova-plugin-geolocation/www/Coordinates.js",
     "pluginId": "cordova-plugin-geolocation",
@@ -397,6 +421,32 @@ module.exports = [
     ]
   },
   {
+    "id": "cordova-plugin-local-notification.LocalNotification",
+    "file": "plugins/cordova-plugin-local-notification/www/local-notification.js",
+    "pluginId": "cordova-plugin-local-notification",
+    "clobbers": [
+      "cordova.plugins.notification.local"
+    ]
+  },
+  {
+    "id": "cordova-plugin-local-notification.LocalNotification.Core",
+    "file": "plugins/cordova-plugin-local-notification/www/local-notification-core.js",
+    "pluginId": "cordova-plugin-local-notification",
+    "clobbers": [
+      "cordova.plugins.notification.local.core",
+      "plugin.notification.local.core"
+    ]
+  },
+  {
+    "id": "cordova-plugin-local-notification.LocalNotification.Util",
+    "file": "plugins/cordova-plugin-local-notification/www/local-notification-util.js",
+    "pluginId": "cordova-plugin-local-notification",
+    "merges": [
+      "cordova.plugins.notification.local.core",
+      "plugin.notification.local.core"
+    ]
+  },
+  {
     "id": "cordova-plugin-network-information.network",
     "file": "plugins/cordova-plugin-network-information/www/network.js",
     "pluginId": "cordova-plugin-network-information",
@@ -421,25 +471,93 @@ module.exports = [
       "navigator.notification",
       "navigator"
     ]
+  },
+  {
+    "id": "cordova-plugin-media-capture.CaptureAudioOptions",
+    "file": "plugins/cordova-plugin-media-capture/www/CaptureAudioOptions.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "clobbers": [
+      "CaptureAudioOptions"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media-capture.CaptureImageOptions",
+    "file": "plugins/cordova-plugin-media-capture/www/CaptureImageOptions.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "clobbers": [
+      "CaptureImageOptions"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media-capture.CaptureVideoOptions",
+    "file": "plugins/cordova-plugin-media-capture/www/CaptureVideoOptions.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "clobbers": [
+      "CaptureVideoOptions"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media-capture.CaptureError",
+    "file": "plugins/cordova-plugin-media-capture/www/CaptureError.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "clobbers": [
+      "CaptureError"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media-capture.MediaFileData",
+    "file": "plugins/cordova-plugin-media-capture/www/MediaFileData.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "clobbers": [
+      "MediaFileData"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media-capture.MediaFile",
+    "file": "plugins/cordova-plugin-media-capture/www/MediaFile.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "clobbers": [
+      "MediaFile"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media-capture.helpers",
+    "file": "plugins/cordova-plugin-media-capture/www/helpers.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "runs": true
+  },
+  {
+    "id": "cordova-plugin-media-capture.capture",
+    "file": "plugins/cordova-plugin-media-capture/www/capture.js",
+    "pluginId": "cordova-plugin-media-capture",
+    "clobbers": [
+      "navigator.device.capture"
+    ]
   }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
+  "cordova-plugin-device": "1.1.7",
+  "cordova-plugin-background-mode-bluetooth-central": "1.0.0",
+  "cordova-plugin-badge": "0.8.8",
   "cordova-plugin-battery-status": "1.2.5",
+  "cordova-plugin-bluetoothle": "4.5.5",
   "cordova-plugin-calendar": "5.1.4",
   "cordova-plugin-compat": "1.2.0",
   "cordova-plugin-camera": "2.4.1",
   "cordova-plugin-contacts": "3.0.1",
-  "cordova-plugin-device": "1.1.7",
   "cordova-plugin-dialogs": "1.3.4",
   "cordova-plugin-email": "1.2.7",
   "cordova-plugin-file": "6.0.2",
+  "cordova-plugin-file-opener2": "2.2.1",
   "cordova-plugin-geolocation": "2.4.3",
   "cordova-plugin-globalization": "1.0.9",
   "cordova-plugin-inappbrowser": "1.7.2",
+  "cordova-plugin-local-notification": "0.9.0-beta.2",
   "cordova-plugin-network-information": "1.3.4",
-  "cordova-plugin-vibration": "2.1.6"
+  "cordova-plugin-vibration": "2.1.6",
+  "cordova-plugin-media-capture": "1.4.3"
 };
 // BOTTOM OF METADATA
 });

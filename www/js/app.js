@@ -1,14 +1,33 @@
 var tmp = [];
 
 calOptionsIdWork = "";
+calOptionsWork = "Work";
 calOptionsIdTrack = "";
+calOptionsTrack = "Track";
+
 tmpFile = "";
 
 log('loading of app.js');
 
+function getLogTime(){
+  return new Date().toString("yyyy-MM-dd HH:mm:ss");
+}
+
+function showStatus( str ){
+    
+    ct = getLogTime();
+
+    $("#footer1").empty(); $("#footer1").append( ct + " " + str );
+    $("#footer2").empty(); $("#footer2").append( ct + " " + str );
+    $("#footer5").empty(); $("#footer5").append( ct + " " + str );
+
+}
+
 function log( str ){
     
-    tmp.push( str );
+    ct = getLogTime();
+
+    tmp.push( ct + " " + str );
 
     $("#log").empty();    
 
@@ -21,7 +40,6 @@ function log( str ){
     }
 
     $("#log").append("</table>");
-
 
 }
 
@@ -327,3 +345,4 @@ function distance(lat1, lon1, lat2, lon2, unit) {
     return dist;
   }
 }
+

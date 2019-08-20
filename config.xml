@@ -88,6 +88,12 @@
     <plugin name="cordova-plugin-calendar" spec="5.1.4">
         <variable name="CALENDAR_USAGE_DESCRIPTION" value="Find Events in Calendar for TimeTracking" />
     </plugin>
-    <plugin name="cordova-plugin-file" />
-    <engine name="ios" spec="^4.5.5" />
+    <plugin name="cordova-plugin-file-opener2" spec="2.2.1" />
+    <plugin name="cordova-plugin-local-notification" spec="0.9.0-beta.2" />
+    <plugin name="cordova-plugin-media-capture" spec="1.4.3">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value=" " />
+        <variable name="MICROPHONE_USAGE_DESCRIPTION" value=" " />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value=" " />
+    </plugin>
+    <engine name="ios" spec="4.5.5" />
 </widget>
