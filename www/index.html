@@ -261,6 +261,7 @@
 		
 		<br/>
 		<a class="ui-btn" id="options">Sync Options</a>
+		<a class="ui-btn" id="notify">Notify</a>
 
 		<br/>
 		<a class="ui-btn" id="create">createEventNowStart</a>
@@ -289,6 +290,15 @@
 	</div><!-- /content -->
 
 	<script>
+		
+		$('#notify').on('click', function () {
+			cordova.plugins.notification.local.schedule({
+			    title: 'Sync in progress',
+			    text: 'Hello from Progress!',
+			    progressBar: { value: 20 }
+			});
+		});
+
 		$('#options').on('click', function () {
          	
 			var calOptions = window.plugins.calendar.getCalendarOptions();
