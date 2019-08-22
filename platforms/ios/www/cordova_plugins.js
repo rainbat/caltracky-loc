@@ -9,14 +9,6 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-badge.Badge",
-    "file": "plugins/cordova-plugin-badge/www/badge.js",
-    "pluginId": "cordova-plugin-badge",
-    "clobbers": [
-      "cordova.plugins.notification.badge"
-    ]
-  },
-  {
     "id": "cordova-plugin-battery-status.battery",
     "file": "plugins/cordova-plugin-battery-status/www/battery.js",
     "pluginId": "cordova-plugin-battery-status",
@@ -421,32 +413,6 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-local-notification.LocalNotification",
-    "file": "plugins/cordova-plugin-local-notification/www/local-notification.js",
-    "pluginId": "cordova-plugin-local-notification",
-    "clobbers": [
-      "cordova.plugins.notification.local"
-    ]
-  },
-  {
-    "id": "cordova-plugin-local-notification.LocalNotification.Core",
-    "file": "plugins/cordova-plugin-local-notification/www/local-notification-core.js",
-    "pluginId": "cordova-plugin-local-notification",
-    "clobbers": [
-      "cordova.plugins.notification.local.core",
-      "plugin.notification.local.core"
-    ]
-  },
-  {
-    "id": "cordova-plugin-local-notification.LocalNotification.Util",
-    "file": "plugins/cordova-plugin-local-notification/www/local-notification-util.js",
-    "pluginId": "cordova-plugin-local-notification",
-    "merges": [
-      "cordova.plugins.notification.local.core",
-      "plugin.notification.local.core"
-    ]
-  },
-  {
     "id": "cordova-plugin-network-information.network",
     "file": "plugins/cordova-plugin-network-information/www/network.js",
     "pluginId": "cordova-plugin-network-information",
@@ -533,6 +499,53 @@ module.exports = [
     "clobbers": [
       "navigator.device.capture"
     ]
+  },
+  {
+    "id": "cordova-plugin-mauron85-background-geolocation.BackgroundGeolocation",
+    "file": "plugins/cordova-plugin-mauron85-background-geolocation/www/BackgroundGeolocation.js",
+    "pluginId": "cordova-plugin-mauron85-background-geolocation",
+    "clobbers": [
+      "BackgroundGeolocation"
+    ]
+  },
+  {
+    "id": "cordova-plugin-mauron85-background-geolocation.radio",
+    "file": "plugins/cordova-plugin-mauron85-background-geolocation/www/radio.js",
+    "pluginId": "cordova-plugin-mauron85-background-geolocation"
+  },
+  {
+    "id": "cordova-plugin-badge.Badge",
+    "file": "plugins/cordova-plugin-badge/www/badge.js",
+    "pluginId": "cordova-plugin-badge",
+    "clobbers": [
+      "cordova.plugins.notification.badge"
+    ]
+  },
+  {
+    "id": "cordova-plugin-local-notification.LocalNotification",
+    "file": "plugins/cordova-plugin-local-notification/www/local-notification.js",
+    "pluginId": "cordova-plugin-local-notification",
+    "clobbers": [
+      "cordova.plugins.notification.local"
+    ]
+  },
+  {
+    "id": "cordova-plugin-local-notification.LocalNotification.Core",
+    "file": "plugins/cordova-plugin-local-notification/www/local-notification-core.js",
+    "pluginId": "cordova-plugin-local-notification",
+    "clobbers": [
+      "cordova.plugins.notification.local.core",
+      "plugin.notification.local.core"
+    ]
+  },
+  {
+    "id": "cordova-plugin-local-notification.LocalNotification.Util",
+    "file": "plugins/cordova-plugin-local-notification/www/local-notification-util.js",
+    "pluginId": "cordova-plugin-local-notification",
+    "merges": [
+      "cordova.plugins.notification.local.core",
+      "plugin.notification.local.core"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -540,7 +553,6 @@ module.exports.metadata =
 {
   "cordova-plugin-device": "1.1.7",
   "cordova-plugin-background-mode-bluetooth-central": "1.0.0",
-  "cordova-plugin-badge": "0.8.8",
   "cordova-plugin-battery-status": "1.2.5",
   "cordova-plugin-bluetoothle": "4.5.5",
   "cordova-plugin-calendar": "5.1.4",
@@ -554,10 +566,12 @@ module.exports.metadata =
   "cordova-plugin-geolocation": "2.4.3",
   "cordova-plugin-globalization": "1.0.9",
   "cordova-plugin-inappbrowser": "1.7.2",
-  "cordova-plugin-local-notification": "0.9.0-beta.2",
   "cordova-plugin-network-information": "1.3.4",
   "cordova-plugin-vibration": "2.1.6",
-  "cordova-plugin-media-capture": "1.4.3"
+  "cordova-plugin-media-capture": "1.4.3",
+  "cordova-plugin-mauron85-background-geolocation": "3.0.5",
+  "cordova-plugin-badge": "0.8.8",
+  "cordova-plugin-local-notification": "0.9.0-beta.2"
 };
 // BOTTOM OF METADATA
 });

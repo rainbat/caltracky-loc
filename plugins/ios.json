@@ -54,9 +54,6 @@
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
-    "cordova-plugin-local-notification": {
-      "PACKAGE_NAME": "ch.rainbat.caltracky"
-    },
     "cordova-plugin-network-information": {
       "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
@@ -68,13 +65,21 @@
       "MICROPHONE_USAGE_DESCRIPTION": " ",
       "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
       "PACKAGE_NAME": "ch.rainbat.caltracky"
+    },
+    "cordova-plugin-mauron85-background-geolocation": {
+      "ALWAYS_USAGE_DESCRIPTION": "This app always requires location tracking",
+      "MOTION_USAGE_DESCRIPTION": "This app requires motion detection",
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "ch.rainbat.caltracky"
     }
   },
   "dependent_plugins": {
-    "cordova-plugin-badge": {
+    "cordova-plugin-compat": {
       "PACKAGE_NAME": "ch.rainbat.caltracky"
     },
-    "cordova-plugin-compat": {
+    "cordova-plugin-badge": {
       "PACKAGE_NAME": "ch.rainbat.caltracky"
     }
   }

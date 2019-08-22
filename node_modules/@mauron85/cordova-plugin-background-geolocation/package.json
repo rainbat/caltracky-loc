@@ -1,0 +1,74 @@
+{
+  "_from": "@mauron85/cordova-plugin-background-geolocation@3.0.5",
+  "_id": "@mauron85/cordova-plugin-background-geolocation@3.0.5",
+  "_inBundle": false,
+  "_integrity": "sha512-vhhdMFVMqOfwrwvz+q15Bq8+Q3/hGgE1cGSGO8caU6ikXoRwsP+ey+wtcB+GLfyJEASZrSUdoFPwtO184VvtPA==",
+  "_location": "/@mauron85/cordova-plugin-background-geolocation",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@mauron85/cordova-plugin-background-geolocation@3.0.5",
+    "name": "@mauron85/cordova-plugin-background-geolocation",
+    "escapedName": "@mauron85%2fcordova-plugin-background-geolocation",
+    "scope": "@mauron85",
+    "rawSpec": "3.0.5",
+    "saveSpec": null,
+    "fetchSpec": "3.0.5"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@mauron85/cordova-plugin-background-geolocation/-/cordova-plugin-background-geolocation-3.0.5.tgz",
+  "_shasum": "ad0a57fa054f13b7de5510144b44c8d34f8d8a1a",
+  "_spec": "@mauron85/cordova-plugin-background-geolocation@3.0.5",
+  "_where": "/Users/rainbat/Dropbox/caltracky-loc",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/mauron85/cordova-plugin-background-geolocation/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-mauron85-background-geolocation",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova Background Geolocation Plugin",
+  "engines": {
+    "cordovaDependencies": {
+      "0.0.1": {
+        "cordova": ">=3.0.0"
+      },
+      "2.3.3": {
+        "cordova": ">=7.1.0",
+        "cordova-android": ">=6.3.0",
+        "cordova-ios": ">=4.4.0"
+      }
+    }
+  },
+  "homepage": "https://github.com/mauron85/cordova-plugin-background-geolocation#readme",
+  "keywords": [
+    "gps",
+    "location",
+    "geolocation",
+    "background",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova",
+    "phonegap"
+  ],
+  "license": "Apache-2.0",
+  "main": "./www/BackgroundGeolocation.js",
+  "name": "@mauron85/cordova-plugin-background-geolocation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mauron85/cordova-plugin-background-geolocation.git"
+  },
+  "types": "./www/BackgroundGeolocation.d.ts",
+  "version": "3.0.5"
+}

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ch.rainbat.caltracky" version="1.0.32" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="ch.rainbat.caltracky" version="1.0.33" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>CalTracky</name>
     <description>
         A Location aware Container App with navigation and links
@@ -8,24 +8,10 @@
         rainbat solutions GmbH
     </author>
     <content src="index.html" />
+    <icon src="icon.png" />
     <preference name="phonegap-version" value="cli-8.1.1" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="19" />
-    <plugin name="cordova-plugin-email" spec="1.2.7" />
-    <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.2.4" />
-    <plugin name="cordova-plugin-device" source="npm" spec="~1.1.6" />
-    <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.3.3" />
-    <plugin name="cordova-plugin-geolocation" source="npm" spec="~2.4.3" />
-    <plugin name="cordova-plugin-globalization" source="npm" spec="~1.0.7" />
-    <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.7.1" />
-    <plugin name="cordova-plugin-network-information" source="npm" spec="~1.3.3" />
-    <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.5" />
-    <edit-config file="*-Info.plist" mode="merge" target="NSLocationAlwaysUsageDescription">
-        <string>We want to remind you when you are there!</string>
-    </edit-config>
-    <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
-        <string>We want to remind you when you are there!</string>
-    </edit-config>
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -40,7 +26,18 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <icon src="icon.png" />
+    <plugin name="cordova-plugin-email" spec="1.2.7" />
+    <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.2.4" />
+    <plugin name="cordova-plugin-device" source="npm" spec="~1.1.6" />
+    <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.3.3" />
+    <plugin name="cordova-plugin-globalization" source="npm" spec="~1.0.7" />
+    <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.7.1" />
+    <plugin name="cordova-plugin-network-information" source="npm" spec="~1.3.3" />
+    <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.5" />
+    <plugin name="cordova-plugin-calendar" spec="5.1.4">
+        <variable name="CALENDAR_USAGE_DESCRIPTION" value="Find Events in Calendar for TimeTracking" />
+    </plugin>
+    <plugin name="cordova-plugin-file-opener2" spec="2.2.1" />
     <platform name="ios">
         <icon height="1024" src="res/icon/ios/icon-1024.png" width="1024" />
         <icon height="29" src="res/icon/ios/icon-small.png" width="29" />
@@ -85,10 +82,6 @@
         <splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png" />
         <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
     </platform>
-    <plugin name="cordova-plugin-calendar" spec="5.1.4">
-        <variable name="CALENDAR_USAGE_DESCRIPTION" value="Find Events in Calendar for TimeTracking" />
-    </plugin>
-    <plugin name="cordova-plugin-file-opener2" spec="2.2.1" />
     <plugin name="cordova-plugin-local-notification" spec="0.9.0-beta.2" />
     <engine name="ios" spec="4.5.5" />
 </widget>

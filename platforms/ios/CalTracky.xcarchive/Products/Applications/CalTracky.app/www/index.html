@@ -47,127 +47,17 @@
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
+		<a class="ui-btn" id="options">Load Favorites</a>
 		<a class="ui-btn" id="today">Sync Today</a>
 		<center><div id="cards"></div></center>
+		<center><div id="cards_fav"></div></center>
 		<a href="#settings" class="ui-btn">...</a>
 		<script>
-
+			$('#options').on('click', function () {
+				syncOptions();
+			});
 			$('#today').on('click', function () {
-         	
-				window.plugins.calendar.listCalendars(
-			     	function(msg){
-			     		msg.forEach(function(entry) {
-			     			if ( entry.name == "Work" )  calOptionsIdWork = entry.id;
-			     			if ( entry.name == "Track" ) calOptionsIdTrack = entry.id;
-			     		});
-			     		log( "calOptionsIdWork:" + calOptionsIdWork);
-			     		log( "calOptionsIdTrack:" + calOptionsIdTrack);
-			     	},
-			     	function(msg){
-			     		log("Error listCalendars");
-			     	}
-			     );
-
-				if( calOptionsIdWork == "" || calOptionsIdTrack == ""){
-					$("#cards").append("<b>Calendars with Name <i>Work</i> and <i>Track</i> not found. <br/>Please add them manually !</b>");
-				}
-
-				var calOptions = window.plugins.calendar.getCalendarOptions();
-	  			calOptions.calendarName = "Work";
-	  			calOptions.calendarId = calOptionsIdWork;
-			     
-			     window.plugins.calendar.findEventWithOptions(
-			     	
-			     	null, 
-			     	null, 
-			     	null, 
-			     	
-					new Date.today(),
-					new Date.today().addDays(1) , 
-			     	
-			     	calOptions,
-
-			     	function (msg) {
-
-					    log('Calendar Work and Track found.' );
-						
-						showStatus( 'Calendar Work and Track found' );
-
-						$("#cards").empty();
-
-					    msg.forEach(function(entry) {
-					   
-					      var spart = entry.startDate.split(' ');
-					      var epart =  entry.endDate.split(' ');
-					   
-					      tmp_card = addCard(entry.id, entry.title, spart[1], epart[1] );
-					   
-					      if( entry.title.indexOf("Options") == -1) $("#cards").append(tmp_card);
-					   
-					    });
-
-					}, 
-			     	function(msg) { log("Error findEventWithOptions: " + msg); }
-			     );
-
-			//});
-
-			//$('#syncTrackStatus').on('click', function () {
-		
-				var calOptions = window.plugins.calendar.getCalendarOptions();
-	  			calOptions.calendarName = "Track";
-	  			calOptions.calendarId = calOptionsIdTrack;
-			     
-			     window.plugins.calendar.findEventWithOptions(
-			     	
-			     	null, 
-			     	null, 
-			     	null, 
-			     	
-					new Date.today(),
-					new Date.today().addDays(1) , 
-			     	
-			     	calOptions,
-
-			     	function (msg) {
-
-					    log('Calendar success: ' );
-						
-						$("#track").empty();
-					    $("#track").append("<table border=1>");
-					    msg.forEach(function(entry) {
-					    	
-					    	var spart = entry.startDate.split(' ');
-						    var epart = entry.endDate.split(' ');
-
-					     	$("#track").append( "<tr><td>" + spart[1] + " " + epart[1] + " " + entry.title + "</td></tr>" );
-
-					     	if(entry.title.indexOf("(Start Drive)") >=0){
-					     		$("#" + entry.message + " > div > div > button[id=wt-drive]").prop("disabled", true);
-								$("#" + entry.message + " > div > div > button[id=wt-drive] > i").removeClass();
-								$("#" + entry.message + " > div > div > button[id=wt-drive] > i").addClass("fa fa-3x fa-refresh fa-spin");
-					     	}
-
-							if(entry.title.indexOf("(Start Work)") >=0){
-					     		$("#" + entry.message + " > div > div > button[id=wt-work]").prop("disabled", true);
-							    $("#" + entry.message + " > div > div > button[id=wt-work] > i").removeClass();
-							    $("#" + entry.message + " > div > div > button[id=wt-work] > i").addClass("fa fa-3x fa-refresh fa-spin");
-					     	}
-
-							if(entry.title.indexOf("(Memo)") >=0){
-							    //$("#" + entry.message + " > div > div > button[id=wt-note] > i").addClass("fa fa-3x fa-refresh fa-spin");
-					     	}
-
-
-						});
-					   
-					   $("#track").append("</table>");
-					   
-
-					}, 
-			     	function(msg) { log("Error syncTrackStatus: " + msg); }
-			     );
-
+				syncToday();
 			});
 		</script>
 	</div><!-- /content -->
@@ -198,42 +88,7 @@
 
 		<script>
 			$('#saveMemo').on('click', function () {
-	
-  				var filterOptions = window.plugins.calendar.getCalendarOptions(); 
-				filterOptions.calendarName = "Track";
-				filterOptions.calendarId = calOptionsIdTrack;
-				
-				var newOptions = window.plugins.calendar.getCalendarOptions(); 
-				newOptions.calendarName = "Track";
-				newOptions.calendarId = calOptionsIdTrack; 
-				
-				window.plugins.calendar.modifyEventWithOptions(
-
-					$("#title").val() + " (Memo)",
-					"Home",
-					null,
-
-					new Date.today(),
-					new Date.today().addDays(1) , 
-
-					$("#title").val() + " (Memo)",
-					"Home",
-					$("#memo").val(),
-
-					new Date(),
-			        new Date( moment().add(1, 'hours') ),
-
-					filterOptions,
-					newOptions,
-
-				function(msg) { 
-					log("Success modifyEventWithOptions: " + JSON.stringify(msg)); 
-					$(':mobile-pagecontainer').pagecontainer('change', '#menu');
-				},
-				function(msg) { log("Error modifyEventWithOptions: " + msg); }
-
-				);
-
+  				saveMemo();
   			});
 
 
@@ -252,107 +107,30 @@
 
 	<div data-role="header">
 	<a href="#menu" data-direction="reverse" class="ui-btn"><</a>
-		<h1>Settings</h1>
+		<h1>API Testing Page</h1>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
 		
-		<!-- <a class="ui-btn" id="syncTrackStatus">syncTrackStatus</a> -->
-		
+		<a class="ui-btn" id="updateLog">empty Log</a>
 		<br/>
-		<a class="ui-btn" id="options">Sync Options</a>
-
-		<br/>
-		<a class="ui-btn" id="create">createEventNowStart</a>
-		<a class="ui-btn" id="update">updateEventNowToEnd</a>
-		<br/>
-		<a class="ui-btn" id="location">getLocation</a>
-		<a class="ui-btn" id="watchPosition">watchPosition</a>
-		<a class="ui-btn" id="clearWatchPosition">clearWatchPosition</a>
+		<div id="track" class="ui-shadow ui-listview-inset"></div>
+		<div id="log" class="ui-shadow ui-listview-inset"></div>
 		<br/>
 		<a class="ui-btn" id="createFile">createFile</a>
-		<a class="ui-btn" id="readFile">readFile</a>
-		<a class="ui-btn" id="sendFile">sendFile</a>
-
-		<br/>
 		<a class="ui-btn" id="createExcelFile">createExcelFile</a>
 		<a class="ui-btn" id="createWordFile">createWordFile</a>
 		<a class="ui-btn" id="createHTMLFile">createHTMLFile</a>
-		<a class="ui-btn" id="createCal">createCal</a>
-		
-		<br/>
-		<a class="ui-btn" id="updateLog">empty Log</a>
-		<div id="log" class="ui-shadow ui-listview-inset"></div>
-		<div id="track" class="ui-shadow ui-listview-inset"></div>
-		
-		
-		
+		<a class="ui-btn" id="readFile">readFile</a>
+		<a class="ui-btn" id="sendFile">sendFile</a>
+			
 	</div><!-- /content -->
 
 	<script>
+
 		$('#options').on('click', function () {
          	
-			var calOptions = window.plugins.calendar.getCalendarOptions();
-  			calOptions.calendarName = "Work";
-  			calOptions.calendarId = calOptionsIdWork;
-		     
-		     window.plugins.calendar.listCalendars(
-		     	function(msg){
-		     		msg.forEach(function(entry) {
-		     			if ( entry.name == "Work" )  calOptionsIdWork = entry.id;
-		     			if ( entry.name == "Track" ) calOptionsIdTrack = entry.id;
-		     		});
-		     		log( "calOptionsIdWork:" + calOptionsIdWork);
-		     		log( "calOptionsIdTrack:" + calOptionsIdTrack);
-		     	},
-		     	function(msg){
-		     		log("Error listCalendars");
-		     	}
-		     );
-
-
-		     window.plugins.calendar.findEventWithOptions(
-		     	
-		     	"CalTracky Options", 
-		     	null, 
-		     	null, 
-		     	
-				new Date.parse("2018-01-01"),
-				new Date.parse("2022-31-12"), 
-		     	
-		     	calOptions,
-
-		     	function (msg) {
-
-				    log('Calendar Found Options success: ' + msg.length);
-					
-					if( msg.length == 0){
-
-			            window.plugins.calendar.createEventWithOptions(
-  
-		                  "CalTracky Options",
-		                  "Home",
-		                  "{ 'test' : 'test' }",
-		                  
-		                  new Date(),
-		                  new Date( moment().add(1, 'hours') ),
-		                  
-		                  calOptions,
-		                  
-		                  function(msg) { log("Success createEventWithOptions: " + JSON.stringify(msg)); },
-		                  function(msg) { log("Error createEventWithOptions: " + msg); }
-		                
-		                );
-
-
-					}else{
-						$("#cards").append( "Found Options " + msg[0].message);
-					}
-
-				}, 
-		     	function(msg) { log("Error findEventWithOptions: " + msg); }
-		     );
-
+			syncOptions();
 		});
 		
 		$('#updateLog').on('click', function () {
@@ -372,161 +150,6 @@
 			$("#log").append("</table>");
 
 
-		});
-
-		$('#create').on('click', function () {
-
-			var calOptions = window.plugins.calendar.getCalendarOptions();
-  			calOptions.calendarName = "Track";
-  			calOptions.calendarId = calOptionsIdTrack;
-
-  			window.plugins.calendar.createEventWithOptions(
-				
-				"My nice event (Start)",
-				 "Home",
-				"Some notes about this event.",
-				
-				new Date(),
-				new Date( moment().add(1, 'hours') ),
-				
-				calOptions,
-				
-				function(msg) { log("Success createEventWithOptions: " + JSON.stringify(msg)); },
-				function(msg) { log("Error createEventWithOptions: " + msg); }
-			);
-
-		});
-
-		$('#update').on('click', function () {
-		
-			var calOptions = window.plugins.calendar.getCalendarOptions();
-  			calOptions.calendarName = "Track";
-  			calOptions.calendarId = calOptionsIdTrack;
-
-			window.plugins.calendar.findEventWithOptions(
-				
-				"My nice event (Start)",
-				"Home",
-				"Some notes about this event.",
-				
-				new Date.today(),
-				new Date.today().addDays(1) ,
-				
-				calOptions,
-
-				function( msg ){
-
-					var filterOptions = window.plugins.calendar.getCalendarOptions(); 
-  					filterOptions.calendarName = "Track";
-  					filterOptions.calendarId = calOptionsIdTrack;
-  					var newOptions = window.plugins.calendar.getCalendarOptions(); 
-  					newOptions.calendarName = "Track";
-  					newOptions.calendarId = calOptionsIdTrack; 
-  					
-  					window.plugins.calendar.modifyEventWithOptions(
-
-  						"My nice event (Start)",
-						"Home",
-						"Some notes about this event.",
-
-  						Date.parse( msg[0].startDate ),
-  						Date.parse( msg[0].endDate ),
-
-  						"My nice event (End)",
-						"Home",
-						"Some notes about this event.",
-
-  						Date.parse( msg[0].startDate ),
-  						new Date(),
-
-  						filterOptions,
-  						newOptions,
-
-						function(msg) { log("Success modifyEventWithOptions: " + JSON.stringify(msg)); },
-						function(msg) { log("Error modifyEventWithOptions: " + msg); }
-
-  					);
-
-				},
-
-				function(msg) { alert("Error modifyEventWithOptions: " + msg); }
-			);
-			
-			
-
-		});
-
-		$('#location').on('click', function () {
-
-			var onSuccess = function(position) {
-				  log('Latitude: '          + position.coords.latitude          + '\n' +
-				      'Longitude: '         + position.coords.longitude         + '\n' +
-				      'Altitude: '          + position.coords.altitude          + '\n' +
-				      'Accuracy: '          + position.coords.accuracy          + '\n' +
-				      'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-				      'Heading: '           + position.coords.heading           + '\n' +
-				      'Speed: '             + position.coords.speed             + '\n' +
-				      'Timestamp: '         + position.timestamp                + '\n');
-				};
-
-			// onError Callback receives a PositionError object
-			//
-			function onError(error) {
-			    log('code: '    + error.code    + '\n' +
-			          'message: ' + error.message + '\n');
-			}
-
-			window.navigator.geolocation.getCurrentPosition(onSuccess, onError);
-
-		});
-
-		var watchID = "";
-
-		$('#watchPosition').on('click', function () {
-
-			// onSuccess Callback
-			//   This method accepts a `Position` object, which contains
-			//   the current GPS coordinates
-			//
-			function onSuccess(position) {
-			    /*alert('Latitude: '          + position.coords.latitude          + '\n' +
-				      'Longitude: '         + position.coords.longitude         + '\n' +
-				      'Altitude: '          + position.coords.altitude          + '\n' +
-				      'Accuracy: '          + position.coords.accuracy          + '\n' +
-				      'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-				      'Heading: '           + position.coords.heading           + '\n' +
-				      'Speed: '             + position.coords.speed             + '\n' +
-				      'Timestamp: '         + position.timestamp                + '\n');*/
-				
-				log( "moving with :" + position.coords.speed );
-				
-				//if( position.coords.speed > -1 ){
-				
-				  cordova.plugins.notification.local.schedule({
-					    title: 'Sync in progress',
-					    text: 'Copied 2 of 10 files',
-					    progressBar: { value: 20 }
-				  });
-				
-				//}
-
-			}
-
-			// onError Callback receives a PositionError object
-			//
-			function onError(error) {
-			    log('code: '    + error.code    + '\n' +
-			          'message: ' + error.message + '\n');
-			}
-
-			// Options: throw an error if no update is received every 30 seconds.
-			//
-			var watchID = window.navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 240000, frequency: 1000 });
-			
-		});
-
-		$('#clearWatchPosition').on('click', function () {
-			window.navigator.geolocation.clearWatch(watchID);
 		});
 
 		$('#createFile').on('click', function () {
@@ -710,20 +333,6 @@
 						    });
 
 			            });
-
-						
-
-
-						/*cordova.plugins.email.open({
-						    to:          Array("info@rainbat.ch"), // email addresses for TO field
-						    subject:    "test", // subject of the email
-						    body:       "test", // email body (for HTML, set isHtml to true)
-						    isHtml:    true, // indicats if the body is HTML or plain text
-							attachments: "base64:test.xlsx//" + buffer64
-						}, 
-						function( msg ){
-							log("mail sent");
-						}, this);*/
 						
 					});
 
@@ -789,17 +398,6 @@
 					        };
 
 					    });
-						
-						/*cordova.plugins.email.open({
-						    to:          Array("info@rainbat.ch"), // email addresses for TO field
-						    subject:    "test", // subject of the email
-						    body:       "test", // email body (for HTML, set isHtml to true)
-						    isHtml:    true, // indicats if the body is HTML or plain text
-							attachments: "base64:test.xlsx//" + buffer64
-						}, 
-						function( msg ){
-							log("mail sent");
-						}, this);*/
 						
 					});
 
@@ -870,38 +468,11 @@
 							//window.open(tmpFile, '_system');
 
 					    });
-
-						/*cordova.plugins.email.open({
-						    to:          Array("info@rainbat.ch"), // email addresses for TO field
-						    subject:    "test", // subject of the email
-						    body:       "test", // email body (for HTML, set isHtml to true)
-						    isHtml:    true, // indicats if the body is HTML or plain text
-							attachments: "base64:test.xlsx//" + buffer64
-						}, 
-						function( msg ){
-							log("mail sent");
-						}, this);*/
-
 						
 					});
 
 				});
 		});
-
-		$('#createCal').on('click', function () {
-
-			var calOptions = window.plugins.calendar.getCalendarOptions();
-  			calOptions.calendarName = "Track";
-  			calOptions.calendarId = calOptionsIdTrack;
-			createCalOptions.calendarColor = "#FF0000";
-
-			window.plugins.calendar.createCalendar(calOptions,
-				showStatus("created CalTracky"),
-				showStatus("nop")
-				);
-
-		});
-
 
 		function b64toBlob(b64Data, contentType, sliceSize) {
 		    contentType = contentType || '';

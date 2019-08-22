@@ -98,7 +98,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		BdgQZ2tXJN4gmeKhTWakwt/CtGM=
+		eXBl06mpBhhEGC6E0rDugkv+6Jo=
 		</data>
 		<key>CDVCapture.bundle/controls_bg.png</key>
 		<data>
@@ -222,7 +222,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		NploA3qh+YdxpRLS0v3OLoe25eg=
+		GuDgEO51qWOwaTX9oyxevZW+xOs=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -230,7 +230,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		6qweJFyqImRgYl9PXaYubdhAf+A=
+		nHSvbU5IiYIubLn0Y10k3VkYkL0=
 		</data>
 		<key>CDVNotification.bundle/beep.wav</key>
 		<data>
@@ -238,11 +238,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		EePmPJ5rY146pd7Rk5t9zpdAm+o=
+		+/MoMkRir/lO7IF4sOyJFIr/JUQ=
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		PgTUEORtGL0dK4ysqrebiLP+yYE=
+		82OGh99eAqLThsWAeGI9ntMzrcg=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -250,7 +250,7 @@
 		</data>
 		<key>config.xml</key>
 		<data>
-		x6Lh5pNA39tmqp8//PERmP0A6/A=
+		efbp7vq6RSrZ8mibahUL8lA+x9M=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
@@ -298,7 +298,7 @@
 		</data>
 		<key>www/cordova_plugins.js</key>
 		<data>
-		27o3rAl5pLh2o4I82dI+SxfvbuA=
+		3e8AKvSQo4mCou5LtRoU2rZzVVc=
 		</data>
 		<key>www/css/bootstrap-material-design-0.3.0/css/material-fullpalette.min.css</key>
 		<data>
@@ -602,7 +602,7 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		eF1yyKTqPTAsbdCSDDXO2KhcUOQ=
+		AwQJ5mgp4GmHmFC0v6OfqURPbAw=
 		</data>
 		<key>www/js/FileSaver.js</key>
 		<data>
@@ -614,7 +614,7 @@
 		</data>
 		<key>www/js/app.js</key>
 		<data>
-		dGNfnhcpl+engaPhKbiSBmkolVg=
+		636SHcbLwlF7gnSrNHRuBgmo8CE=
 		</data>
 		<key>www/js/cpexcel.js</key>
 		<data>
@@ -903,6 +903,14 @@
 		<key>www/plugins/cordova-plugin-local-notification/www/local-notification.js</key>
 		<data>
 		cyVZFACG6w+OVT9N1qHwLhY8oPk=
+		</data>
+		<key>www/plugins/cordova-plugin-mauron85-background-geolocation/www/BackgroundGeolocation.js</key>
+		<data>
+		nuC8dNkeIDmLqOl1ieJavanTY8Y=
+		</data>
+		<key>www/plugins/cordova-plugin-mauron85-background-geolocation/www/radio.js</key>
+		<data>
+		EBRGyI/okSSZPt4/cOjolrnZOlY=
 		</data>
 		<key>www/plugins/cordova-plugin-media-capture/www/CaptureAudioOptions.js</key>
 		<data>
@@ -1216,11 +1224,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BdgQZ2tXJN4gmeKhTWakwt/CtGM=
+			eXBl06mpBhhEGC6E0rDugkv+6Jo=
 			</data>
 			<key>hash2</key>
 			<data>
-			i4A6zmbCVAmDPHCUvCw1cbvOK4/r/EZXDyBlKk9RhGc=
+			wbmJmGhIHLtElLCwWkXK+DNNMeg56U4XStm+OvPEIV4=
 			</data>
 		</dict>
 		<key>CDVCapture.bundle/controls_bg.png</key>
@@ -1510,11 +1518,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NploA3qh+YdxpRLS0v3OLoe25eg=
+			GuDgEO51qWOwaTX9oyxevZW+xOs=
 			</data>
 			<key>hash2</key>
 			<data>
-			EKuTuXWh8+MN6rPk3wfSCUUyVL3uItO5qyr/aYIPI14=
+			ftYo+bIuN+gbdB+qArymot+mcCq52LUabAwje/H8cCQ=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -1532,11 +1540,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6qweJFyqImRgYl9PXaYubdhAf+A=
+			nHSvbU5IiYIubLn0Y10k3VkYkL0=
 			</data>
 			<key>hash2</key>
 			<data>
-			RvK1H30EzN5AC7EEprKCyFWyV50LPhU6zUtp4YKkrGo=
+			ec2HBUV79WPu8RWldiQ3egXxnJNYexnIni9wVqdtKyU=
 			</data>
 		</dict>
 		<key>CDVNotification.bundle/beep.wav</key>
@@ -1554,22 +1562,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PgTUEORtGL0dK4ysqrebiLP+yYE=
+			82OGh99eAqLThsWAeGI9ntMzrcg=
 			</data>
 			<key>hash2</key>
 			<data>
-			aCXmqRUGhagWAFHAo4K6xRYWpMnYV8xTJE0oneTYz5o=
+			KatOM6e1npBtekRlX+o4SScuHz+OoILrC+Wp3bmyeR4=
 			</data>
 		</dict>
 		<key>config.xml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			x6Lh5pNA39tmqp8//PERmP0A6/A=
+			efbp7vq6RSrZ8mibahUL8lA+x9M=
 			</data>
 			<key>hash2</key>
 			<data>
-			w83G0Qyzsem6kEZjzh36QS2AW9pfo3lv2U98kNGXqUE=
+			ayIHrk+2TbYbFmbAF3jCik6JZ0aEgsmz5E4fqYFN7pU=
 			</data>
 		</dict>
 		<key>embedded.mobileprovision</key>
@@ -1697,11 +1705,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			27o3rAl5pLh2o4I82dI+SxfvbuA=
+			3e8AKvSQo4mCou5LtRoU2rZzVVc=
 			</data>
 			<key>hash2</key>
 			<data>
-			CeJ/+ZSs9inG8GKqYWxBjxNHNI7/hl5qsAN8IP4KeOk=
+			KnwGVxOGspot7b44A3HCjHMHFQnqvFUzmE7BntOeDgc=
 			</data>
 		</dict>
 		<key>www/css/bootstrap-material-design-0.3.0/css/material-fullpalette.min.css</key>
@@ -2533,11 +2541,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			eF1yyKTqPTAsbdCSDDXO2KhcUOQ=
+			AwQJ5mgp4GmHmFC0v6OfqURPbAw=
 			</data>
 			<key>hash2</key>
 			<data>
-			4Qf131NYl7rUNr8VCApFak/a4ORduDN/tbn6ElnIJjs=
+			7OrpIk1N0TszekgdFUb+CXhuw4/tAm1NczRR5RcgEac=
 			</data>
 		</dict>
 		<key>www/js/FileSaver.js</key>
@@ -2566,11 +2574,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dGNfnhcpl+engaPhKbiSBmkolVg=
+			636SHcbLwlF7gnSrNHRuBgmo8CE=
 			</data>
 			<key>hash2</key>
 			<data>
-			wW8sKVREqOlUcs8QAVqVyB9P2hFmdsL/83dchIDx8CM=
+			6wy5vMIqonYyuXQKhBgeFzfOl6cq+RqIeNRTwyOJ+V4=
 			</data>
 		</dict>
 		<key>www/js/cpexcel.js</key>
@@ -3363,6 +3371,28 @@
 			<key>hash2</key>
 			<data>
 			2cqviDmZpoatFWUdW69pk+SXwIuvfnNH+6T5suKRsfg=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-mauron85-background-geolocation/www/BackgroundGeolocation.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			nuC8dNkeIDmLqOl1ieJavanTY8Y=
+			</data>
+			<key>hash2</key>
+			<data>
+			+ZOI6Wz9PWsGbATmi2h3wRDcCwZej4l0egDeOCZgPso=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-mauron85-background-geolocation/www/radio.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			EBRGyI/okSSZPt4/cOjolrnZOlY=
+			</data>
+			<key>hash2</key>
+			<data>
+			vAwdtX7+NcxWrNMrmvezBTBbQIL+ER0e2Dx4LfPkzeA=
 			</data>
 		</dict>
 		<key>www/plugins/cordova-plugin-media-capture/www/CaptureAudioOptions.js</key>
